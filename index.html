@@ -6,17 +6,13 @@
     <title>Vandiza Dev - Jasa Web & Digital Solution</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
         
-        /* Efek Teks Gradasi Emas & Biru */
+        /* Efek Teks Gradasi */
         .gradient-text {
             background: linear-gradient(to right, #4facfe 0%, #00f2ea 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gradient-text-gold {
-            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -51,21 +47,21 @@
     </nav>
 
     <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]">
-        <div class="inline-block px-4 py-1.5 mb-6 border border-gray-700 rounded-full bg-gray-900/50 backdrop-blur-sm">
+        <div class="inline-block px-4 py-1.5 mb-6 border border-gray-700 rounded-full bg-gray-900/50 backdrop-blur-sm" data-aos="fade-down">
             <span class="text-xs font-semibold tracking-widest text-cyan-400 uppercase">Jasa Pembuatan Website Profesional</span>
         </div>
         
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
             Wujudkan Identitas Digital <br>
             yang <span class="gradient-text">Elegan & Berdampak</span>
         </h1>
         
-        <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
+        <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
             Mitra digital terbaik untuk UMKM, Sekolah, hingga Personal Branding. 
             Kami membangun website yang cepat, aman, dan memikat pelanggan Anda.
         </p>
 
-        <div class="flex flex-col md:flex-row gap-4 w-full md:w-auto px-6">
+        <div class="flex flex-col md:flex-row gap-4 w-full md:w-auto px-6" data-aos="fade-up" data-aos-delay="300">
             <a href="#services" class="border border-gray-600 text-gray-300 px-8 py-4 rounded-xl font-medium hover:border-cyan-400 hover:text-cyan-400 transition w-full md:w-auto">
                 Lihat Paket
             </a>
@@ -78,109 +74,68 @@
     <section id="services" class="py-24 bg-gray-900 relative">
         <div class="max-w-7xl mx-auto px-6">
             
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Solusi Digital untuk <span class="text-cyan-400">Semua Kebutuhan</span></h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">
-                    Kami tidak hanya membuat website, kami menciptakan solusi yang sesuai dengan target audiens Anda. Pilih kategori Anda:
+                    Kami tidak hanya membuat website, kami menciptakan solusi yang sesuai dengan target audiens Anda.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                <div class="service-card bg-gray-800/50 border border-gray-700 p-8 rounded-2xl flex flex-col">
+                <div class="service-card bg-gray-800/50 border border-gray-700 p-8 rounded-2xl flex flex-col" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-14 h-14 bg-blue-900/30 rounded-lg flex items-center justify-center mb-6 text-blue-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
-                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" /></svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white">UMKM & Bisnis</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">
-                        Bikin usaha kecil jadi terlihat raksasa. Fokus pada penjualan dan kemudahan pelanggan.
-                    </p>
-                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
-                        <li class="flex items-center"><span class="text-cyan-400 mr-2">✓</span> Toko Online Praktis (WA)</li>
-                        <li class="flex items-center"><span class="text-cyan-400 mr-2">✓</span> Optimasi Google Maps</li>
-                        <li class="flex items-center"><span class="text-cyan-400 mr-2">✓</span> Desain Ringan di HP</li>
-                        <li class="flex items-center"><span class="text-cyan-400 mr-2">✓</span> Fitur Promo Banner</li>
-                        <li>
-                            <div class="mb-6 border-t border-gray-700 pt-4">
-                            <p class="text-gray-500 text-sm line-through">Rp 2.500.000</p>
-                            <div class="flex items-end gap-2">
+                    <p class="text-gray-400 text-sm mb-6 flex-grow">Bikin usaha kecil jadi terlihat raksasa. Fokus pada penjualan dan kemudahan pelanggan.</p>
+                    
+                    <div class="mb-6 border-t border-gray-700 pt-4">
+                        <p class="text-gray-500 text-sm line-through">Rp 2.500.000</p>
+                        <div class="flex items-end gap-2">
                             <span class="text-3xl font-bold text-white">Rp 1.250k</span>
-                            <span class="text-sm text-cyan-400 font-medium mb-1">/ tahun pertama</span>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">*Sudah termasuk Domain .COM & Hosting</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <a href="https://wa.me/6287758611756?text=Halo,%20saya%20tertarik%20paket%20UMKM" class="block w-full text-center py-3 rounded-lg border border-gray-600 hover:bg-cyan-500 hover:text-black hover:border-cyan-500 hover:font-bold transition">
-                        Mulai Go Digital
-                    </a>
+                            <span class="text-sm text-cyan-400 font-medium mb-1">/ tahun</span>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/6287758611756?text=Halo,%20saya%20tertarik%20paket%20UMKM" class="block w-full text-center py-3 rounded-lg border border-gray-600 hover:bg-cyan-500 hover:text-black hover:border-cyan-500 hover:font-bold transition">Mulai Go Digital</a>
                 </div>
 
-                <div class="service-card bg-gray-800/50 border border-gray-700 p-8 rounded-2xl flex flex-col relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-bl-lg">
-                        POPULER
-                    </div>
+                <div class="service-card bg-gray-800/50 border border-gray-700 p-8 rounded-2xl flex flex-col relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-0 right-0 bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-bl-lg">POPULER</div>
                     <div class="w-14 h-14 bg-purple-900/30 rounded-lg flex items-center justify-center mb-6 text-purple-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
-                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" /></svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white">Sekolah & Yayasan</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">
-                        Sistem informasi modern untuk meningkatkan kredibilitas dan kemudahan administrasi.
-                    </p>
-                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
-                        <li class="flex items-center"><span class="text-purple-400 mr-2">✓</span> Sistem PPDB Online</li>
-                        <li class="flex items-center"><span class="text-purple-400 mr-2">✓</span> Profil & Fasilitas Sekolah</li>
-                        <li class="flex items-center"><span class="text-purple-400 mr-2">✓</span> Blog Berita & Kegiatan</li>
-                        <li class="flex items-center"><span class="text-purple-400 mr-2">✓</span> Area Download Materi</li>
-                        <li>
-                            <div class="mb-6 border-t border-gray-700 pt-4">
-                            <p class="text-gray-500 text-sm line-through">Rp 5.000.000</p>
-                            <div class="flex items-end gap-2">
+                    <p class="text-gray-400 text-sm mb-6 flex-grow">Sistem informasi modern untuk meningkatkan kredibilitas dan kemudahan administrasi.</p>
+                    
+                    <div class="mb-6 border-t border-gray-700 pt-4">
+                        <p class="text-gray-500 text-sm line-through">Rp 5.000.000</p>
+                        <div class="flex items-end gap-2">
                             <span class="text-3xl font-bold text-white">Rp 2.900k</span>
                             <span class="text-sm text-purple-400 font-medium mb-1">/ lengkap</span>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">*Sudah termasuk PPDB & Training Admin</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <a href="https://wa.me/6287758611756?text=Halo,%20saya%20tertarik%20paket%20Sekolah" class="block w-full text-center py-3 rounded-lg border border-gray-600 hover:bg-purple-500 hover:text-white hover:border-purple-500 hover:font-bold transition">
-                        Digitalkan Sekolah
-                    </a>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/6287758611756?text=Halo,%20saya%20tertarik%20paket%20Sekolah" class="block w-full text-center py-3 rounded-lg border border-gray-600 hover:bg-purple-500 hover:text-white hover:border-purple-500 hover:font-bold transition">Digitalkan Sekolah</a>
                 </div>
 
-                <div class="service-card bg-gray-800/50 border border-gray-700 p-8 rounded-2xl flex flex-col">
+                <div class="service-card bg-gray-800/50 border border-gray-700 p-8 rounded-2xl flex flex-col" data-aos="fade-up" data-aos-delay="300">
                     <div class="w-14 h-14 bg-pink-900/30 rounded-lg flex items-center justify-center mb-6 text-pink-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white">Personal Branding</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">
-                        Tunjukkan kualitas diri Anda. Cocok untuk Freelancer, Influencer, dan Profesional.
-                    </p>
-                    <ul class="space-y-3 mb-8 text-gray-300 text-sm">
-                        <li class="flex items-center"><span class="text-pink-400 mr-2">✓</span> CV Digital Interaktif</li>
-                        <li class="flex items-center"><span class="text-pink-400 mr-2">✓</span> Galeri Portofolio Grid</li>
-                        <li class="flex items-center"><span class="text-pink-400 mr-2">✓</span> Tautan Semua Sosmed</li>
-                        <li class="flex items-center"><span class="text-pink-400 mr-2">✓</span> Blog Tulisan Pribadi</li>
-                        <li>
-                            <div class="mb-6 border-t border-gray-700 pt-4">
+                    <p class="text-gray-400 text-sm mb-6 flex-grow">Tunjukkan kualitas diri Anda. Cocok untuk Freelancer, Influencer, dan Profesional.</p>
+                    
+                    <div class="mb-6 border-t border-gray-700 pt-4">
                         <p class="text-gray-500 text-sm line-through">Rp 1.000.000</p>
                         <div class="flex items-end gap-2">
-                        <span class="text-3xl font-bold text-white">Rp 499k</span>
-                        <span class="text-sm text-pink-400 font-medium mb-1">/ terima beres</span>
+                            <span class="text-3xl font-bold text-white">Rp 499k</span>
+                            <span class="text-sm text-pink-400 font-medium mb-1">/ terima beres</span>
                         </div>
-                        <p class="text-xs text-gray-500 mt-1">*Domain my.id + Single Page</p>
-                        </div>
-                        </li>
-                    </ul>
-                    <a href="https://wa.me/6287758611756?text=Halo,%20saya%20tertarik%20paket%20Personal" class="block w-full text-center py-3 rounded-lg border border-gray-600 hover:bg-pink-500 hover:text-white hover:border-pink-500 hover:font-bold transition">
-                        Bangun Branding
-                    </a>
+                    </div>
+
+                    <a href="https://wa.me/6287758611756?text=Halo,%20saya%20tertarik%20paket%20Personal" class="block w-full text-center py-3 rounded-lg border border-gray-600 hover:bg-pink-500 hover:text-white hover:border-pink-500 hover:font-bold transition">Bangun Branding</a>
                 </div>
 
             </div>
@@ -189,104 +144,99 @@
 
     <section id="portfolio" class="py-24 bg-gray-950">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Karya <span class="text-cyan-400">Terpilih</span></h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
-                    Beberapa contoh hasil kerja yang mengedepankan estetika dan fungsionalitas.
-                </p>
+                <p class="text-gray-400 max-w-2xl mx-auto">Beberapa contoh hasil kerja yang mengedepankan estetika dan fungsionalitas.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <div class="group relative overflow-hidden rounded-xl border border-gray-800 hover:border-cyan-400 transition cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Website Kopi Senja Abadi" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
+                <div class="group relative overflow-hidden rounded-xl border border-gray-800 hover:border-cyan-400 transition cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Website Kopi" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent flex flex-col justify-end p-6">
                         <span class="text-cyan-400 text-xs font-bold tracking-widest mb-2">UMKM / F&B</span>
                         <h3 class="text-xl font-bold text-white mb-1">Kopi Senja Abadi</h3>
-                        <p class="text-gray-400 text-sm">Website katalog menu dengan fitur order WhatsApp otomatis.</p>
                     </div>
                 </div>
 
-                <div class="group relative overflow-hidden rounded-xl border border-gray-800 hover:border-purple-400 transition cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Website SMA Harapan Bangsa" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
+                <div class="group relative overflow-hidden rounded-xl border border-gray-800 hover:border-purple-400 transition cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Website Sekolah" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent flex flex-col justify-end p-6">
                         <span class="text-purple-400 text-xs font-bold tracking-widest mb-2">INSTANSI PENDIDIKAN</span>
                         <h3 class="text-xl font-bold text-white mb-1">SMA Harapan Bangsa</h3>
-                        <p class="text-gray-400 text-sm">Sistem informasi sekolah, profil guru, dan portal berita siswa.</p>
                     </div>
                 </div>
 
-                <div class="group relative overflow-hidden rounded-xl border border-gray-800 hover:border-pink-400 transition cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Website Alex Design" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
+                <div class="group relative overflow-hidden rounded-xl border border-gray-800 hover:border-pink-400 transition cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Website Portfolio" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent flex flex-col justify-end p-6">
                         <span class="text-pink-400 text-xs font-bold tracking-widest mb-2">PERSONAL BRANDING</span>
                         <h3 class="text-xl font-bold text-white mb-1">Alex Design</h3>
-                        <p class="text-gray-400 text-sm">Portofolio digital untuk desainer grafis dengan galeri interaktif.</p>
                     </div>
                 </div>
-
             </div>
-            
-            <div class="text-center mt-12">
-                <!-- <a href="https://wa.me/628xxxxxxx" class="text-gray-400 hover:text-white transition border-b border-gray-600 hover:border-white pb-1">Lihat proyek lainnya di Instagram kami &rarr;</a> -->
+        </div>
+    </section>
+
+    <section class="py-24 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Pertanyaan <span class="text-cyan-400">Umum</span></h2>
+                <p class="text-gray-400">Hal yang sering ditanyakan calon klien kami.</p>
+            </div>
+            <div class="space-y-4">
+                <details class="group bg-gray-800 rounded-xl p-4 cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium text-white list-none">
+                        <span>Berapa lama proses pengerjaan?</span>
+                        <span class="transition group-open:rotate-180"><svg fill="none" height="24" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <p class="text-gray-400 mt-4 text-sm leading-relaxed">Estimasi 3-7 hari kerja tergantung kelengkapan data dan jenis paket yang diambil.</p>
+                </details>
+                <details class="group bg-gray-800 rounded-xl p-4 cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium text-white list-none">
+                        <span>Apakah dapat bimbingan cara pakainya?</span>
+                        <span class="transition group-open:rotate-180"><svg fill="none" height="24" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg></span>
+                    </summary>
+                    <p class="text-gray-400 mt-4 text-sm leading-relaxed">Pasti! Kami sediakan panduan lengkap dan support via WhatsApp jika Anda mengalami kesulitan mengelola website.</p>
+                </details>
             </div>
         </div>
     </section>
 
     <footer class="bg-gray-950 border-t border-gray-800 pt-16 pb-8 text-gray-400 text-sm">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-            
             <div>
                 <div class="text-2xl font-bold tracking-wider text-white mb-4">VANDIZA<span class="text-cyan-400">DEV</span></div>
-                <p class="mb-6 leading-relaxed">
-                    Mitra digital terpercaya untuk UMKM, Sekolah, dan Profesional. Kami membantu bisnis Anda tumbuh dengan teknologi web modern.
-                </p>
-                <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-cyan-400 hover:text-black transition">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.281.11-.705.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.486-.276a2.478 2.478 0 0 1-.919-.598 2.48 2.48 0 0 1-.599-.92c-.11-.281-.24-.705-.276-1.485-.038-.843-.047-1.096-.047-3.232 0-2.136.009-2.39.047-3.232.036-.78.166-1.203.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
-                    </a>
-                </div>
+                <p class="mb-6 leading-relaxed">Mitra digital terpercaya untuk UMKM, Sekolah, dan Profesional.</p>
             </div>
-
             <div>
                 <h4 class="text-white font-bold mb-6">Hubungi Kami</h4>
                 <ul class="space-y-4">
                     <li class="flex items-start gap-3">
                         <span class="text-cyan-400 mt-1">📍</span>
-                        <span>
-                            Cahaya Darussalam 3<br>
-                            Setu, Kabupaten Bekasi<br>
-                            Jawa Barat 17320
-                        </span>
+                        <span>Jl. Cahaya Darussalam 3, Setu, Bekasi, Jawa Barat 17320</span>
                     </li>
                     <li class="flex items-center gap-3">
                         <span class="text-cyan-400">📱</span>
                         <a href="https://wa.me/6287758611756" class="hover:text-cyan-400 transition">+62 877-5861-1756</a>
                     </li>
-                    <li class="flex items-center gap-3">
-                        <span class="text-cyan-400">📧</span>
-                        <a href="tb.vandiza13@gmail.com" class="hover:text-cyan-400 transition">tb.vandiza13@gmail.com</a>
-                    </li>
                 </ul>
             </div>
-
             <div class="rounded-xl overflow-hidden border border-gray-800 h-64 md:h-auto">
-                <iframe 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0; min-height: 250px;" 
-                    loading="lazy" 
-                    allowfullscreen
-                    src="https://maps.google.com/maps?q=Jl.+Cahaya+Darussalam+3,+Setu,+Bekasi&t=&z=15&ie=UTF8&iwloc=&output=embed">
-                </iframe>
+                <iframe width="100%" height="100%" style="border:0; min-height: 250px;" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.5002937299047!2d107.0396181!3d-6.3291196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69909289da3f93%3A0x8e82a6f43e0b0b80!2sJl.%20Cahaya%20Darussalam%203!5e0!3m2!1sid!2sid!4v1703666000000"></iframe>
             </div>
-
         </div>
-        
         <div class="text-center border-t border-gray-900 pt-8">
-            <p>&copy; 2025 Vandiza Dev. All Rights Reserved.</p>
+            <p>© 2024 Vandiza Dev. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <a href="https://wa.me/6287758611756?text=Halo%20Vandiza%20Dev,%20saya%20mau%20konsultasi%20website" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all hover:scale-110 flex items-center justify-center group" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/></svg>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>
