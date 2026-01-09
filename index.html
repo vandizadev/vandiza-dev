@@ -3,240 +3,452 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vandiza Dev - Jasa Web & Digital Solution</title>
+    <title>Vandiza Dev - Jasa Pembuatan Website & Aplikasi Bekasi</title>
+    <meta name="description" content="Jasa pembuatan website profesional di Bekasi. Solusi digital untuk UMKM, terima beres, desain premium, dan harga terjangkau.">
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0F172A', 
+                            primary: '#0F4C75', 
+                            accent: '#F9A826', 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
         
-        /* Efek Teks Gradasi */
-        .gradient-text {
-            background: linear-gradient(to right, #4facfe 0%, #00f2ea 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .accordion-content { transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; max-height: 0; opacity: 0; overflow: hidden; }
+        .accordion-content.active { max-height: 500px; opacity: 1; }
+
+        .blob-anim { animation: blob 10s infinite; }
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
         }
 
-        /* Animasi Card saat Hover */
-        .service-card {
-            transition: all 0.3s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: #00f2ea;
-            box-shadow: 0 10px 40px -10px rgba(0, 242, 234, 0.15);
+        #mobile-menu { transition: transform 0.3s ease-in-out; }
+        .mobile-menu-hidden { transform: translateY(-100%); }
+        .mobile-menu-visible { transform: translateY(0); }
+        
+        .float-img { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
         }
     </style>
 </head>
-<body class="bg-gray-950 text-white overflow-x-hidden">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-primary selection:text-white">
 
-    <nav class="fixed w-full z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-wider cursor-pointer">
-                VANDIZA<span class="text-cyan-400">DEV</span>
-            </div>
-            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
-                <a href="#home" class="hover:text-cyan-400 transition">Beranda</a>
-                <a href="#services" class="hover:text-cyan-400 transition">Layanan</a>
-                <a href="#portfolio" class="hover:text-cyan-400 transition">Portofolio</a>
-            </div>
-            <a href="https://wa.me/6287758611756" class="bg-white text-gray-900 px-5 py-2 rounded-full text-sm font-bold hover:bg-cyan-400 transition transform hover:scale-105">
-                Hubungi Kami
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/0">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center relative z-50">
+            
+            <a href="#home" class="flex items-center gap-3 group">
+                <img src="logo-vandiza.jpg" 
+                     onerror="this.src='https://placehold.co/100x100/0F4C75/ffffff?text=VD'" 
+                     alt="Logo Vandiza Dev" 
+                     class="h-12 w-auto object-contain rounded-full shadow-md border-2 border-white group-hover:scale-105 transition duration-300">
+                
+                <span class="text-xl font-bold font-heading text-slate-900 tracking-tight group-hover:text-brand-primary transition">Vandiza Dev</span>
             </a>
+
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="#home" class="hover:text-brand-primary transition py-2">Beranda</a>
+                <a href="#services" class="hover:text-brand-primary transition py-2">Layanan</a>
+                <a href="#portfolio" class="hover:text-brand-primary transition py-2">Portfolio</a>
+                <a href="#pricing" class="hover:text-brand-primary transition py-2">Harga</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/6287758611756" class="hidden md:block bg-brand-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-sky-700 transition shadow-lg shadow-brand-primary/30 transform hover:-translate-y-0.5">
+                    Konsultasi Gratis
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-slate-800 focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="absolute top-0 left-0 w-full bg-white shadow-xl -z-10 pt-24 pb-8 px-6 flex flex-col gap-4 md:hidden mobile-menu-hidden">
+            <a href="#home" class="text-lg font-medium text-slate-800 border-b border-slate-100 pb-2" onclick="toggleMobileMenu()">Beranda</a>
+            <a href="#services" class="text-lg font-medium text-slate-800 border-b border-slate-100 pb-2" onclick="toggleMobileMenu()">Layanan</a>
+            <a href="#portfolio" class="text-lg font-medium text-slate-800 border-b border-slate-100 pb-2" onclick="toggleMobileMenu()">Portfolio</a>
+            <a href="#pricing" class="text-lg font-medium text-slate-800 border-b border-slate-100 pb-2" onclick="toggleMobileMenu()">Harga</a>
+            <a href="https://wa.me/6287758611756" class="bg-brand-accent text-slate-900 font-bold py-3 rounded-xl text-center shadow-lg mt-2">Chat WhatsApp</a>
         </div>
     </nav>
 
-    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]">
-        <div class="inline-block px-4 py-1.5 mb-6 border border-gray-700 rounded-full bg-gray-900/50 backdrop-blur-sm" data-aos="fade-down">
-            <span class="text-xs font-semibold tracking-widest text-cyan-400 uppercase">Jasa Pembuatan Website Profesional</span>
+    <section id="home" class="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden bg-slate-900">
+        <div class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-primary/30 rounded-full mix-blend-multiply filter blur-3xl blob-anim"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl blob-anim" style="animation-delay: 2s"></div>
         </div>
-        
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
-            Wujudkan Identitas Digital <br>
-            yang <span class="gradient-text">Elegan & Berdampak</span>
-        </h1>
-        
-        <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-            Mitra digital terbaik untuk UMKM, Sekolah, hingga Personal Branding. 
-            Kami membangun website yang cepat, aman, dan memikat pelanggan Anda.
-        </p>
 
-        <div class="flex flex-col md:flex-row gap-4 w-full md:w-auto px-6" data-aos="fade-up" data-aos-delay="300">
-            <a href="#services" class="border border-gray-600 text-gray-300 px-8 py-4 rounded-xl font-medium hover:border-cyan-400 hover:text-cyan-400 transition w-full md:w-auto">
-                Lihat Paket
-            </a>
-            <a href="https://wa.me/6287758611756?text=Halo%20Vandiza%20Dev,%20saya%20mau%20konsultasi%20website" class="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-4 rounded-xl font-bold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-1 transition w-full md:w-auto">
-                Konsultasi Gratis
-            </a>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left fade-in">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-brand-accent text-sm font-medium mb-8">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-yellow-500"></span>
+                        </span>
+                        Partner Digital UMKM Bekasi
+                    </div>
+                    <h1 class="text-5xl lg:text-7xl font-extrabold font-heading text-white mb-6 leading-tight tracking-tight">
+                        Bisnis Lebih <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-brand-accent">Bonafide & Trusted</span>
+                    </h1>
+                    <p class="text-lg text-slate-300 mb-10 font-light leading-relaxed max-w-lg mx-auto md:mx-0">
+                        Jasa pembuatan website & aplikasi terima beres. Fokus jualan, biar kami yang urus teknis agar bisnis Anda terlihat profesional di mata pelanggan.
+                    </p>
+                    <div class="flex flex-col md:flex-row gap-4 justify-center md:justify-start items-center">
+                        <a href="#portfolio" class="w-full md:w-auto px-8 py-4 bg-brand-accent text-slate-900 rounded-full font-bold text-lg hover:bg-yellow-400 transition shadow-[0_0_40px_-10px_rgba(249,168,38,0.5)] transform hover:-translate-y-1">
+                            Lihat Contoh
+                        </a>
+                        <a href="https://wa.me/6287758611756" class="w-full md:w-auto px-8 py-4 bg-white/10 text-white border border-white/20 rounded-full font-bold text-lg hover:bg-white/20 transition backdrop-blur-md">
+                            Konsultasi Gratis
+                        </a>
+                    </div>
+                    <p class="mt-8 text-sm text-slate-400 flex flex-wrap justify-center md:justify-start gap-6">
+                        <span class="flex items-center gap-1"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Garansi Kepuasan</span>
+                        <span class="flex items-center gap-1"><svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg> Proses 3-7 Hari</span>
+                    </p>
+                </div>
+
+                <div class="relative hidden md:flex justify-center md:justify-end">
+                    <div class="absolute inset-0 bg-brand-accent/20 blur-3xl rounded-full transform translate-x-10 translate-y-10"></div>
+                    <div class="relative z-10 float-img transform rotate-3 hover:rotate-0 transition duration-500">
+                        <div class="rounded-[2.5rem] border-[8px] border-slate-800 bg-slate-900 shadow-2xl overflow-hidden h-[600px] w-[350px]">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=400&h=600&auto=format&fit=crop" 
+                                 alt="Tampilan Mobile Website" 
+                                 class="w-full h-full object-cover opacity-90 hover:opacity-100 transition">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="services" class="py-24 bg-gray-900 relative">
-        <div class="max-w-7xl mx-auto px-6">
+    <section id="services" class="py-24 bg-white relative scroll-mt-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <span class="text-brand-primary font-bold tracking-wider uppercase text-xs">Masalah Umum</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-heading text-slate-900 mt-2 mb-4">Kenapa Bisnis Anda Stuck?</h2>
+                <p class="text-slate-500">Banyak UMKM memiliki produk bagus, tapi gagal meyakinkan pembeli karena tampilan digital yang belum profesional.</p>
+            </div>
             
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Solusi Digital untuk <span class="text-cyan-400">Semua Kebutuhan</span></h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
-                    Kami tidak hanya membuat website, kami menciptakan solusi yang sesuai dengan target audiens Anda.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                <div class="service-card bg-gray-800/50 border border-gray-700 p-8 rounded-2xl flex flex-col" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-blue-900/30 rounded-lg flex items-center justify-center mb-6 text-blue-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" /></svg>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group p-8 rounded-3xl bg-white border border-slate-100 shadow-xl shadow-slate-200/50 hover:border-red-200 hover:shadow-red-100 transition duration-300">
+                    <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center text-red-500 mb-6 group-hover:scale-110 transition">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white">UMKM & Bisnis</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">Bikin usaha kecil jadi terlihat raksasa. Fokus pada penjualan dan kemudahan pelanggan.</p>
-                    
-                    <div class="mb-6 border-t border-gray-700 pt-4">
-                        <p class="text-gray-500 text-sm line-through">Rp 2.500.000</p>
-                        <div class="flex items-end gap-2">
-                            <span class="text-3xl font-bold text-white">Rp 1.250k</span>
-                            <span class="text-sm text-cyan-400 font-medium mb-1">/ tahun</span>
-                        </div>
-                    </div>
-
-                    <a href="https://wa.me/6287758611756?text=Halo,%20saya%20tertarik%20paket%20UMKM" class="block w-full text-center py-3 rounded-lg border border-gray-600 hover:bg-cyan-500 hover:text-black hover:border-cyan-500 hover:font-bold transition">Mulai Go Digital</a>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Diragukan Pembeli</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">"Ini penipuan bukan?" Tanpa website resmi, kredibilitas bisnis Anda dipertanyakan oleh calon customer baru.</p>
                 </div>
-
-                <div class="service-card bg-gray-800/50 border border-gray-700 p-8 rounded-2xl flex flex-col relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <div class="absolute top-0 right-0 bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-bl-lg">POPULER</div>
-                    <div class="w-14 h-14 bg-purple-900/30 rounded-lg flex items-center justify-center mb-6 text-purple-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" /></svg>
+                <div class="group p-8 rounded-3xl bg-white border border-slate-100 shadow-xl shadow-slate-200/50 hover:border-orange-200 hover:shadow-orange-100 transition duration-300">
+                    <div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-500 mb-6 group-hover:scale-110 transition">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white">Sekolah & Yayasan</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">Sistem informasi modern untuk meningkatkan kredibilitas dan kemudahan administrasi.</p>
-                    
-                    <div class="mb-6 border-t border-gray-700 pt-4">
-                        <p class="text-gray-500 text-sm line-through">Rp 5.000.000</p>
-                        <div class="flex items-end gap-2">
-                            <span class="text-3xl font-bold text-white">Rp 2.900k</span>
-                            <span class="text-sm text-purple-400 font-medium mb-1">/ lengkap</span>
-                        </div>
-                    </div>
-
-                    <a href="https://wa.me/6287758611756?text=Halo,%20saya%20tertarik%20paket%20Sekolah" class="block w-full text-center py-3 rounded-lg border border-gray-600 hover:bg-purple-500 hover:text-white hover:border-purple-500 hover:font-bold transition">Digitalkan Sekolah</a>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Waktu Terbuang</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Habis waktu membalas chat pertanyaan berulang. Website bekerja otomatis menjelaskan produk Anda 24 jam nonstop.</p>
                 </div>
-
-                <div class="service-card bg-gray-800/50 border border-gray-700 p-8 rounded-2xl flex flex-col" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-14 h-14 bg-pink-900/30 rounded-lg flex items-center justify-center mb-6 text-pink-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>
+                <div class="group p-8 rounded-3xl bg-white border border-slate-100 shadow-xl shadow-slate-200/50 hover:border-blue-200 hover:shadow-blue-100 transition duration-300">
+                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white">Personal Branding</h3>
-                    <p class="text-gray-400 text-sm mb-6 flex-grow">Tunjukkan kualitas diri Anda. Cocok untuk Freelancer, Influencer, dan Profesional.</p>
-                    
-                    <div class="mb-6 border-t border-gray-700 pt-4">
-                        <p class="text-gray-500 text-sm line-through">Rp 1.000.000</p>
-                        <div class="flex items-end gap-2">
-                            <span class="text-3xl font-bold text-white">Rp 499k</span>
-                            <span class="text-sm text-pink-400 font-medium mb-1">/ terima beres</span>
-                        </div>
-                    </div>
-
-                    <a href="https://wa.me/6287758611756?text=Halo,%20saya%20tertarik%20paket%20Personal" class="block w-full text-center py-3 rounded-lg border border-gray-600 hover:bg-pink-500 hover:text-white hover:border-pink-500 hover:font-bold transition">Bangun Branding</a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="py-24 bg-gray-950">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Karya <span class="text-cyan-400">Terpilih</span></h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">Beberapa contoh hasil kerja yang mengedepankan estetika dan fungsionalitas.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="group relative overflow-hidden rounded-xl border border-gray-800 hover:border-cyan-400 transition cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Website Kopi" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent flex flex-col justify-end p-6">
-                        <span class="text-cyan-400 text-xs font-bold tracking-widest mb-2">UMKM / F&B</span>
-                        <h3 class="text-xl font-bold text-white mb-1">Kopi Senja Abadi</h3>
-                    </div>
-                </div>
-
-                <div class="group relative overflow-hidden rounded-xl border border-gray-800 hover:border-purple-400 transition cursor-pointer" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Website Sekolah" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent flex flex-col justify-end p-6">
-                        <span class="text-purple-400 text-xs font-bold tracking-widest mb-2">INSTANSI PENDIDIKAN</span>
-                        <h3 class="text-xl font-bold text-white mb-1">SMA Harapan Bangsa</h3>
-                    </div>
-                </div>
-
-                <div class="group relative overflow-hidden rounded-xl border border-gray-800 hover:border-pink-400 transition cursor-pointer" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Website Portfolio" class="w-full h-64 object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent flex flex-col justify-end p-6">
-                        <span class="text-pink-400 text-xs font-bold tracking-widest mb-2">PERSONAL BRANDING</span>
-                        <h3 class="text-xl font-bold text-white mb-1">Alex Design</h3>
-                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Kalah Kompetisi</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Kompetitor sudah muncul di Google Maps. Jika bisnis Anda susah dicari, rezeki akan pindah ke toko sebelah.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-gray-900 border-t border-gray-800">
-        <div class="max-w-4xl mx-auto px-6" data-aos="fade-up">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Pertanyaan <span class="text-cyan-400">Umum</span></h2>
-                <p class="text-gray-400">Hal yang sering ditanyakan calon klien kami.</p>
+    <section id="portfolio" class="py-24 bg-slate-50 scroll-mt-20 border-t border-slate-200">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div class="max-w-xl">
+                    <span class="text-brand-primary font-bold tracking-wider uppercase text-xs">Hasil Karya</span>
+                    <h2 class="text-3xl md:text-5xl font-bold font-heading text-slate-900 mt-2">Design Showcase</h2>
+                    <p class="text-slate-500 mt-4">Kami mendesain dengan strategi. Bukan sekadar bagus, tapi juga menjual.</p>
+                </div>
+                <a href="https://wa.me/6287758611756" class="hidden md:inline-flex items-center gap-2 text-brand-primary font-bold hover:text-brand-accent transition">
+                    Lihat Lebih Banyak <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
             </div>
-            <div class="space-y-4">
-                <details class="group bg-gray-800 rounded-xl p-4 cursor-pointer">
-                    <summary class="flex justify-between items-center font-medium text-white list-none">
-                        <span>Berapa lama proses pengerjaan?</span>
-                        <span class="transition group-open:rotate-180"><svg fill="none" height="24" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg></span>
-                    </summary>
-                    <p class="text-gray-400 mt-4 text-sm leading-relaxed">Estimasi 3-7 hari kerja tergantung kelengkapan data dan jenis paket yang diambil.</p>
-                </details>
-                <details class="group bg-gray-800 rounded-xl p-4 cursor-pointer">
-                    <summary class="flex justify-between items-center font-medium text-white list-none">
-                        <span>Apakah dapat bimbingan cara pakainya?</span>
-                        <span class="transition group-open:rotate-180"><svg fill="none" height="24" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg></span>
-                    </summary>
-                    <p class="text-gray-400 mt-4 text-sm leading-relaxed">Pasti! Kami sediakan panduan lengkap dan support via WhatsApp jika Anda mengalami kesulitan mengelola website.</p>
-                </details>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer h-80 bg-slate-200">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop" 
+                         alt="Food Website Design" 
+                         class="w-full h-full object-cover transform transition duration-700 group-hover:scale-110 group-hover:rotate-1">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-8 transform translate-y-2 group-hover:translate-y-0 transition duration-300">
+                        <span class="bg-orange-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">F&B / Kuliner</span>
+                        <h3 class="text-2xl font-bold text-white mb-1">Steak House Bekasi</h3>
+                        <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition delay-100">Fitur: Reservasi Online & Menu QR</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer h-80 bg-slate-200">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=600&auto=format&fit=crop" 
+                         alt="Barbershop Website Design" 
+                         class="w-full h-full object-cover transform transition duration-700 group-hover:scale-110 group-hover:rotate-1">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-8 transform translate-y-2 group-hover:translate-y-0 transition duration-300">
+                        <span class="bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">Jasa / Service</span>
+                        <h3 class="text-2xl font-bold text-white mb-1">Gentleman Barbershop</h3>
+                        <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition delay-100">Fitur: Booking Jadwal & Galeri Gaya</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer h-80 bg-slate-200">
+                    <img src="hijab-modern.jpg" 
+                         onerror="this.src='https://placehold.co/600x800/10B981/FFFFFF?text=Hijab+Modern'" 
+                         alt="Desain Website Toko Online Hijab" 
+                         class="w-full h-full object-cover transform transition duration-700 group-hover:scale-110 group-hover:rotate-1">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-0 left-0 p-8 transform translate-y-2 group-hover:translate-y-0 transition duration-300">
+                        <span class="bg-green-500 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">Toko Online</span>
+                        <h3 class="text-2xl font-bold text-white mb-1">Hijab Modern</h3>
+                        <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition delay-100">Fitur: Katalog Produk & Checkout WA</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8 md:hidden">
+                <a href="#" class="inline-block border border-slate-300 px-8 py-3 rounded-full text-slate-600 font-semibold hover:bg-slate-900 hover:text-white transition">Lihat Project Lainnya</a>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-950 border-t border-gray-800 pt-16 pb-8 text-gray-400 text-sm">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-            <div>
-                <div class="text-2xl font-bold tracking-wider text-white mb-4">VANDIZA<span class="text-cyan-400">DEV</span></div>
-                <p class="mb-6 leading-relaxed">Mitra digital terpercaya untuk UMKM, Sekolah, dan Profesional.</p>
+    <section id="pricing" class="py-24 bg-white scroll-mt-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-brand-primary font-bold tracking-wider uppercase text-xs">Pricelist 2026</span>
+                <h2 class="text-3xl md:text-5xl font-bold font-heading text-slate-900 mt-2 mb-4">Investasi Cerdas</h2>
+                <p class="text-slate-500 max-w-xl mx-auto">Harga transparan. Bayar sekali untuk setahun. Fokus kami adalah ROI (Return on Investment) bisnis Anda.</p>
             </div>
-            <div>
-                <h4 class="text-white font-bold mb-6">Hubungi Kami</h4>
-                <ul class="space-y-4">
-                    <li class="flex items-start gap-3">
-                        <span class="text-cyan-400 mt-1">📍</span>
-                        <span>Jl. Cahaya Darussalam 3, Setu, Bekasi, Jawa Barat 17320</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <span class="text-cyan-400">📱</span>
-                        <a href="https://wa.me/6287758611756" class="hover:text-cyan-400 transition">+62 877-5861-1756</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="rounded-xl overflow-hidden border border-gray-800 h-64 md:h-auto">
-                <iframe width="100%" height="100%" style="border:0; min-height: 250px;" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.5002937299047!2d107.0396181!3d-6.3291196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69909289da3f93%3A0x8e82a6f43e0b0b80!2sJl.%20Cahaya%20Darussalam%203!5e0!3m2!1sid!2sid!4v1703666000000"></iframe>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition duration-300 relative">
+                    <h3 class="text-xl font-bold text-slate-900">Landing Page</h3>
+                    <p class="text-slate-500 text-xs mt-1 mb-6">Cocok untuk Sales/Freelancer</p>
+                    <div class="text-4xl font-bold text-slate-900 mb-1">499rb</div>
+                    <div class="text-xs text-slate-400 mb-6">/ halaman</div>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-600">
+                        <li class="flex items-center"><div class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 text-xs">✓</div> 1 Halaman Panjang</li>
+                        <li class="flex items-center"><div class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 text-xs">✓</div> Desain Modern</li>
+                        <li class="flex items-center"><div class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 text-xs">✓</div> Tombol Chat WA</li>
+                        <li class="flex items-center"><div class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 text-xs">✓</div> Revisi 1x</li>
+                    </ul>
+                    <a href="https://wa.me/6287758611756?text=Halo%20Vandiza,%20minat%20paket%20Landing%20Page" class="block w-full py-3 border border-slate-300 text-slate-700 text-center rounded-xl font-bold hover:bg-slate-50 transition text-sm">Pilih Paket</a>
+                </div>
+                
+                <div class="bg-brand-primary text-white rounded-3xl p-10 shadow-2xl shadow-blue-900/20 transform md:scale-110 relative z-10 border border-blue-600/50">
+                    <div class="absolute top-0 right-0 bg-brand-accent text-slate-900 text-xs font-bold px-4 py-2 rounded-bl-2xl rounded-tr-2xl">PALING LARIS</div>
+                    <h3 class="text-2xl font-bold font-heading">Paket UMKM</h3>
+                    <p class="text-blue-200 text-xs mt-1 mb-6">Solusi Lengkap Terima Beres</p>
+                    <div class="text-5xl font-bold text-white mb-1">1,25 Jt</div>
+                    <div class="text-xs text-blue-200 mb-8">/ tahun (Free Domain .com)</div>
+                    <ul class="space-y-4 mb-8 text-sm text-blue-50">
+                        <li class="flex items-center"><div class="w-5 h-5 rounded-full bg-blue-500 text-white flex items-center justify-center mr-3 text-xs">✓</div> <strong>Gratis Domain .com</strong></li>
+                        <li class="flex items-center"><div class="w-5 h-5 rounded-full bg-blue-500 text-white flex items-center justify-center mr-3 text-xs">✓</div> Hosting Bisnis Cepat</li>
+                        <li class="flex items-center"><div class="w-5 h-5 rounded-full bg-blue-500 text-white flex items-center justify-center mr-3 text-xs">✓</div> Hingga 5 Halaman</li>
+                        <li class="flex items-center"><div class="w-5 h-5 rounded-full bg-blue-500 text-white flex items-center justify-center mr-3 text-xs">✓</div> Integrasi Google Maps</li>
+                        <li class="flex items-center"><div class="w-5 h-5 rounded-full bg-blue-500 text-white flex items-center justify-center mr-3 text-xs">✓</div> Support Prioritas</li>
+                    </ul>
+                    <a href="https://wa.me/6287758611756?text=Halo%20Vandiza,%20saya%20mau%20ambil%20Promo%20Paket%20UMKM" class="block w-full py-4 bg-brand-accent text-slate-900 text-center rounded-xl font-bold hover:bg-yellow-400 transition shadow-lg">
+                        Ambil Promo Sekarang
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-xl transition duration-300 relative">
+                    <h3 class="text-xl font-bold text-slate-900">Company</h3>
+                    <p class="text-slate-500 text-xs mt-1 mb-6">Untuk PT / Web Aplikasi</p>
+                    <div class="text-4xl font-bold text-slate-900 mb-1">2,5 Jt++</div>
+                    <div class="text-xs text-slate-400 mb-6">Tergantung Kerumitan</div>
+                    <ul class="space-y-4 mb-8 text-sm text-slate-600">
+                        <li class="flex items-center"><div class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 text-xs">✓</div> Desain Custom Premium</li>
+                        <li class="flex items-center"><div class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 text-xs">✓</div> Fitur Kompleks (Login/Kasir)</li>
+                        <li class="flex items-center"><div class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 text-xs">✓</div> Maintenance Bulanan</li>
+                        <li class="flex items-center"><div class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 text-xs">✓</div> Training Penggunaan</li>
+                    </ul>
+                    <a href="https://wa.me/6287758611756?text=Halo%20Vandiza,%20mau%20diskusi%20Web%20Custom" class="block w-full py-3 border border-slate-300 text-slate-700 text-center rounded-xl font-bold hover:bg-slate-50 transition text-sm">Konsultasi Dulu</a>
+                </div>
             </div>
         </div>
-        <div class="text-center border-t border-gray-900 pt-8">
-            <p>© 2026 Vandiza Dev. All Rights Reserved.</p>
+    </section>
+
+    <section id="faq" class="py-24 bg-white scroll-mt-20 border-t border-slate-100">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="text-brand-primary font-bold tracking-wider uppercase text-xs">Bantuan</span>
+                    <h2 class="text-3xl font-bold font-heading text-slate-900 mt-2">Sering Ditanyakan</h2>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="border border-slate-200 rounded-2xl overflow-hidden hover:border-blue-300 transition">
+                        <button class="w-full text-left p-6 flex justify-between items-center bg-white hover:bg-slate-50 transition" onclick="toggleAccordion(this)">
+                            <span class="font-semibold text-slate-800">Berapa lama website saya jadi?</span>
+                            <span class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-300">↓</span>
+                        </button>
+                        <div class="accordion-content bg-slate-50 px-6">
+                            <p class="text-slate-600 pb-6 pt-2 text-sm leading-relaxed">
+                                Untuk Paket UMKM biasanya selesai dalam <strong>3-5 hari kerja</strong> setelah data (foto/teks) Anda kirimkan lengkap. Kami bekerja cepat agar bisnis Anda segera online!
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-slate-200 rounded-2xl overflow-hidden hover:border-blue-300 transition">
+                        <button class="w-full text-left p-6 flex justify-between items-center bg-white hover:bg-slate-50 transition" onclick="toggleAccordion(this)">
+                            <span class="font-semibold text-slate-800">Saya gaptek, apakah bisa kelola sendiri?</span>
+                            <span class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-300">↓</span>
+                        </button>
+                        <div class="accordion-content bg-slate-50 px-6">
+                            <p class="text-slate-600 pb-6 pt-2 text-sm leading-relaxed">
+                                Sangat bisa! Kami menggunakan sistem yang <em>user-friendly</em>. Plus, kami berikan <strong>video panduan</strong> cara ganti foto atau teks. Tim support Vandiza juga siap membantu jika ada kendala.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border border-slate-200 rounded-2xl overflow-hidden hover:border-blue-300 transition">
+                        <button class="w-full text-left p-6 flex justify-between items-center bg-white hover:bg-slate-50 transition" onclick="toggleAccordion(this)">
+                            <span class="font-semibold text-slate-800">Apakah ada biaya perpanjangan?</span>
+                            <span class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-300">↓</span>
+                        </button>
+                        <div class="accordion-content bg-slate-50 px-6">
+                            <p class="text-slate-600 pb-6 pt-2 text-sm leading-relaxed">
+                                Ya, ada biaya perpanjangan untuk <strong>Domain & Server</strong> setiap tahunnya (mulai tahun kedua). Biayanya jauh lebih murah dari biaya pembuatan awal. Ini standar di seluruh dunia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-white pt-16 pb-8 border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="logo-vandiza.jpg" onerror="this.src='https://placehold.co/100x100/0F4C75/ffffff?text=VD'" alt="Logo Vandiza Dev" class="h-10 w-auto rounded-full">
+                        <span class="text-xl font-bold font-heading tracking-tight">Vandiza Dev</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+                        Partner digital strategis untuk UMKM dan Bisnis di Bekasi. Kami membantu Anda Go Digital dengan solusi website yang cepat, aman, dan menguntungkan.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white font-heading">Hubungi Kami</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-brand-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <a href="https://wa.me/6287758611756" class="hover:text-brand-accent transition">+62 877-5861-1756</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-brand-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Senin - Sabtu: 09:00 - 17:00
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white font-heading">Lokasi</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Perumahan Cahaya Darussalam 3,<br>
+                        Blk. A4 No.4, Bekasi, Jawa Barat 17320
+                    </p>
+                    <a href="https://maps.google.com" target="_blank" class="text-brand-accent text-sm mt-4 inline-block hover:underline">Lihat di Google Maps →</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
+                © 2026 Vandiza Dev. All rights reserved. Made with ❤️ in Bekasi.
+            </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/6287758611756?text=Halo%20Vandiza%20Dev,%20saya%20mau%20konsultasi%20website" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all hover:scale-110 flex items-center justify-center group" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/></svg>
+    <a href="https://wa.me/6287758611756?text=Halo%20Vandiza,%20saya%20tertarik%20bikin%20website" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition duration-300 flex items-center gap-2 group border-4 border-white/20">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span class="font-bold hidden group-hover:block transition-all duration-300">Chat Sekarang</span>
     </a>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init({ duration: 1000, once: true });
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                nav.classList.add('glass-nav', 'shadow-sm');
+                nav.classList.remove('bg-white/0');
+            } else {
+                nav.classList.remove('glass-nav', 'shadow-sm');
+                nav.classList.add('bg-white/0');
+            }
+        });
+
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            toggleMobileMenu();
+        });
+
+        function toggleMobileMenu() {
+            menu.classList.toggle('mobile-menu-hidden');
+            menu.classList.toggle('mobile-menu-visible');
+        }
+
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('span:last-child');
+            
+            document.querySelectorAll('.accordion-content').forEach(item => {
+                if (item !== content && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('span:last-child').style.transform = 'rotate(0deg)';
+                }
+            });
+
+            content.classList.toggle('active');
+            
+            if (content.classList.contains('active')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
     </script>
 </body>
 </html>
