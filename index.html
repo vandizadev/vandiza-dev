@@ -338,7 +338,14 @@
     .hero-phone:hover { transform: rotate(0deg); }
     .hero-phone img {
       width: 100%; height: 100%; object-fit: cover;
-      opacity: 0.85; filter: saturate(0.8) contrast(1.05);
+      object-position: center top;
+      opacity: 0.9;
+      filter: saturate(0.75) contrast(1.1) brightness(0.88);
+      transition: filter 0.5s ease, opacity 0.5s ease;
+    }
+    .hero-phone:hover img {
+      filter: saturate(0.95) contrast(1.05) brightness(0.98);
+      opacity: 1;
     }
     .hero-phone-notch {
       position: absolute; top: 14px; left: 50%;
@@ -967,7 +974,8 @@
             </div>
             <div class="hero-phone">
               <div class="hero-phone-notch"></div>
-              <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=400&h=700&auto=format&fit=crop"
+              <img src="https://images.unsplash.com/photo-1529653762956-b0a27278529c?q=85&w=400&h=700&auto=format&fit=crop"
+                   onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1553011433-17f9aa3d95b6?q=85&w=400&h=700&auto=format&fit=crop'"
                    alt="Contoh tampilan website mobile profesional Vandiza Dev">
             </div>
             <div class="hero-card-float hcf1">
