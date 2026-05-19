@@ -473,19 +473,41 @@
       .price-card.featured { transform: none; }
       .testi-grid { grid-template-columns: 1fr; }
     }
+    
+    /* ── MOBILE OPTIMIZATIONS (FIXED) ── */
     @media (max-width: 640px) {
       nav { padding: 1rem 5%; }
       .nav-links, .nav-cta { display: none; }
       .hamburger { display: flex; }
       .section { padding: 5rem 5%; }
       #stats { padding: 3rem 5%; }
-      .stats-grid { grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
       .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .form-row { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: 1fr 1fr; }
       #cursor, #cursor-ring { display: none; }
       body { cursor: auto; }
       .about-card { right: 0; bottom: -10px; }
+
+      /* Hero Section Fixes */
+      .hero-h1 { font-size: clamp(2rem, 9vw, 2.8rem); }
+      .hero-actions { justify-content: center; width: 100%; }
+      .btn-primary, .btn-ghost { width: 100%; text-align: center; justify-content: center; }
+      .hero-visual-inner { padding: 1.5rem 0; width: 100%; display: flex; justify-content: center; }
+      .hero-phone { width: 85%; max-width: 300px; height: 420px; }
+      .hcf1 { bottom: 10px; left: -5%; }
+      .hcf2 { top: 10px; right: -5%; }
+
+      /* Stats Fixes */
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
+      .stat-num { font-size: 2.2rem; }
+
+      /* Portfolio Fixes */
+      .port-card { width: 85vw; max-width: 340px; height: 400px; }
+
+      /* Process Steps Fixes */
+      .process-steps { grid-template-columns: 1fr; gap: 2.5rem; text-align: left; }
+      .process-step { display: flex; align-items: flex-start; text-align: left; gap: 1.5rem; padding: 0; }
+      .process-icon { margin: 0; flex-shrink: 0; width: 60px; height: 60px; }
+      .process-icon svg { width: 24px; height: 24px; }
     }
   </style>
 </head>
@@ -494,7 +516,6 @@
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
 
-<!-- ══════════ NAV ══════════ -->
 <nav id="navbar" role="navigation" aria-label="Navigasi Utama">
   <a href="#hero" class="nav-logo" aria-label="Vandiza Tech - Home">
     <img src="logo-vandiza.png"
@@ -529,7 +550,6 @@
 
 <main>
 
-  <!-- ══════════ HERO ══════════ -->
   <section id="hero" aria-labelledby="hero-heading">
     <div class="hero-orb-wrap" aria-hidden="true">
       <div class="hero-bg-orb orb1"></div>
@@ -589,7 +609,6 @@
     </div>
   </section>
 
-  <!-- ══════════ STATS ══════════ -->
   <section id="stats" aria-label="Statistik Vandiza Tech">
     <div class="stats-grid">
       <div class="stat-item fade-up">
@@ -611,7 +630,6 @@
     </div>
   </section>
 
-  <!-- ══════════ PROBLEM ══════════ -->
   <section id="problem" class="section" aria-labelledby="problem-heading">
     <div class="problem-layout">
       <div class="problem-left">
@@ -641,7 +659,6 @@
     </div>
   </section>
 
-  <!-- ══════════ SERVICES ══════════ -->
   <section id="services" class="section" aria-labelledby="services-heading">
     <div class="services-header">
       <div>
@@ -701,7 +718,6 @@
     </div>
   </section>
 
-  <!-- ══════════ PROCESS ══════════ -->
   <section id="process" class="section" aria-labelledby="process-heading">
     <div class="process-header">
       <div class="section-tag">Cara Kami Bekerja</div>
@@ -716,45 +732,54 @@
           <span class="process-step-num">1</span>
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
         </div>
-        <h4 class="process-step-title">Konsultasi</h4>
-        <p class="process-step-desc">Diskusi gratis untuk memahami kebutuhan, target, dan anggaran bisnis Anda.</p>
+        <div>
+          <h4 class="process-step-title">Konsultasi</h4>
+          <p class="process-step-desc">Diskusi gratis untuk memahami kebutuhan, target, dan anggaran bisnis Anda.</p>
+        </div>
       </div>
       <div class="process-step fade-up fade-up-d1" role="listitem">
         <div class="process-icon">
           <span class="process-step-num">2</span>
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
         </div>
-        <h4 class="process-step-title">Assessment</h4>
-        <p class="process-step-desc">Audit kebutuhan teknis, infrastruktur eksisting, dan identifikasi risiko.</p>
+        <div>
+          <h4 class="process-step-title">Assessment</h4>
+          <p class="process-step-desc">Audit kebutuhan teknis, infrastruktur eksisting, dan identifikasi risiko.</p>
+        </div>
       </div>
       <div class="process-step fade-up fade-up-d2" role="listitem">
         <div class="process-icon">
           <span class="process-step-num">3</span>
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
         </div>
-        <h4 class="process-step-title">Proposal</h4>
-        <p class="process-step-desc">Penawaran tertulis dengan scope, timeline, dan biaya yang transparan.</p>
+        <div>
+          <h4 class="process-step-title">Proposal</h4>
+          <p class="process-step-desc">Penawaran tertulis dengan scope, timeline, dan biaya yang transparan.</p>
+        </div>
       </div>
       <div class="process-step fade-up fade-up-d3" role="listitem">
         <div class="process-icon">
           <span class="process-step-num">4</span>
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
         </div>
-        <h4 class="process-step-title">Pengerjaan</h4>
-        <p class="process-step-desc">Eksekusi proyek dengan update berkala dan komunikasi aktif kepada klien.</p>
+        <div>
+          <h4 class="process-step-title">Pengerjaan</h4>
+          <p class="process-step-desc">Eksekusi proyek dengan update berkala dan komunikasi aktif kepada klien.</p>
+        </div>
       </div>
       <div class="process-step fade-up fade-up-d4" role="listitem">
         <div class="process-icon">
           <span class="process-step-num">5</span>
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         </div>
-        <h4 class="process-step-title">Serah Terima & Support</h4>
-        <p class="process-step-desc">Deliveri final + dokumentasi + garansi dan dukungan purna jual.</p>
+        <div>
+          <h4 class="process-step-title">Serah Terima & Support</h4>
+          <p class="process-step-desc">Deliveri final + dokumentasi + garansi dan dukungan purna jual.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════ PORTFOLIO ══════════ -->
   <section id="portfolio" class="section" style="padding-bottom:0;" aria-labelledby="portfolio-heading">
     <div class="portfolio-header">
       <div>
@@ -770,7 +795,6 @@
     </div>
     <div class="port-scroll-wrap" role="region" aria-label="Portfolio Vandiza Tech — geser untuk melihat lebih banyak">
       <div class="port-track">
-        <!-- Web -->
         <article class="port-card" data-cat="web">
           <img src="steak.png"
                onerror="this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=600&auto=format&fit=crop'"
@@ -804,7 +828,6 @@
             <p class="port-sub">Katalog produk & Integrasi Payment Gateway</p>
           </div>
         </article>
-        <!-- Network -->
         <article class="port-card" data-cat="net">
           <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=600&auto=format&fit=crop"
                alt="Instalasi Jaringan Kantor" loading="lazy">
@@ -825,7 +848,6 @@
             <p class="port-sub">Infrastruktur ISP mikro untuk perumahan</p>
           </div>
         </article>
-        <!-- Security -->
         <article class="port-card" data-cat="sec">
           <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=600&auto=format&fit=crop"
                alt="Cybersecurity Audit" loading="lazy">
@@ -844,7 +866,6 @@
     </div>
   </section>
 
-  <!-- ══════════ TESTIMONIALS ══════════ -->
   <section id="testimonials" class="section" aria-labelledby="testi-heading">
     <div class="testimonials-header">
       <div class="section-tag">Kata Mereka</div>
@@ -905,7 +926,6 @@
     </div>
   </section>
 
-  <!-- ══════════ ABOUT ══════════ -->
   <section id="about" class="section" aria-labelledby="about-heading">
     <div class="about-layout">
       <div class="about-visual fade-up">
@@ -953,7 +973,6 @@
     </div>
   </section>
 
-  <!-- ══════════ PRICING ══════════ -->
   <section id="pricing" class="section" aria-labelledby="pricing-heading">
     <div class="pricing-intro">
       <div class="section-tag">Estimasi Biaya</div>
@@ -1012,7 +1031,6 @@
     </div>
   </section>
 
-  <!-- ══════════ VELONIX ══════════ -->
   <section id="featured-product" class="section" aria-labelledby="product-heading">
     <div class="problem-layout">
       <div class="problem-left">
@@ -1052,7 +1070,6 @@
     </div>
   </section>
 
-  <!-- ══════════ FAQ ══════════ -->
   <section id="faq" class="section" aria-labelledby="faq-heading">
     <div class="faq-layout">
       <div class="faq-left">
@@ -1102,7 +1119,6 @@
     </div>
   </section>
 
-  <!-- ══════════ CONTACT FORM ══════════ -->
   <section id="contact" class="section" aria-labelledby="contact-heading">
     <div class="contact-layout">
       <div class="contact-info">
@@ -1186,7 +1202,6 @@
     </div>
   </section>
 
-  <!-- ══════════ CTA ══════════ -->
   <section id="cta" aria-labelledby="cta-heading">
     <div class="cta-orb" aria-hidden="true"></div>
     <h2 class="cta-h2" id="cta-heading">
@@ -1204,7 +1219,6 @@
   </section>
 </main>
 
-<!-- ══════════ FOOTER ══════════ -->
 <footer>
   <div class="footer-grid">
     <div>
@@ -1275,7 +1289,6 @@
   </div>
 </footer>
 
-<!-- WhatsApp FAB -->
 <a href="https://wa.me/6287758611756?text=Halo+Tim+Vandiza+Tech,+saya+ingin+konsultasi" class="wa-fab" rel="noopener noreferrer" aria-label="Chat WhatsApp Vandiza Tech">
   <span class="wa-tooltip">Konsultasi Gratis!</span>
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
