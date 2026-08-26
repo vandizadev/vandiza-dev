@@ -474,40 +474,97 @@
       .testi-grid { grid-template-columns: 1fr; }
     }
     
-    /* ── MOBILE OPTIMIZATIONS (FIXED) ── */
+    /* ── MOBILE OPTIMIZATIONS (FIXED v2) ── */
     @media (max-width: 640px) {
+      html, body { overflow-x: hidden !important; max-width: 100vw; position: relative; }
       nav { padding: 1rem 5%; }
       .nav-links, .nav-cta { display: none; }
       .hamburger { display: flex; }
-      .section { padding: 5rem 5%; }
-      #stats { padding: 3rem 5%; }
-      .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .section { padding: 4rem 5%; }
+      #stats { padding: 2.5rem 5%; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .form-row { grid-template-columns: 1fr; }
-      #cursor, #cursor-ring { display: none; }
-      body { cursor: auto; }
+      #cursor, #cursor-ring { display: none !important; }
+      body { cursor: auto !important; }
       .about-card { right: 0; bottom: -10px; }
 
       /* Hero Section Fixes */
-      .hero-h1 { font-size: clamp(2rem, 9vw, 2.8rem); }
-      .hero-actions { justify-content: center; width: 100%; }
-      .btn-primary, .btn-ghost { width: 100%; text-align: center; justify-content: center; }
-      .hero-visual-inner { padding: 1.5rem 0; width: 100%; display: flex; justify-content: center; }
-      .hero-phone { width: 85%; max-width: 300px; height: 420px; }
-      .hcf1 { bottom: 10px; left: -5%; }
-      .hcf2 { top: 10px; right: -5%; }
+      #hero { padding: 6rem 5% 4rem; min-height: auto; }
+      .hero-h1 { font-size: clamp(1.8rem, 8vw, 2.5rem); margin-bottom: 1rem; }
+      .hero-sub { font-size: 0.95rem; margin-bottom: 1.5rem; }
+      .hero-actions { justify-content: center; width: 100%; gap: 0.75rem; }
+      .btn-primary, .btn-ghost { width: 100%; text-align: center; justify-content: center; padding: 0.8rem 1.5rem; font-size: 0.9rem; }
+      .hero-visual-inner { padding: 1rem 0; width: 100%; display: flex; justify-content: center; }
+      .hero-phone { width: 80%; max-width: 280px; height: 380px; }
+      .hcf1 { bottom: 10px; left: 0; transform: scale(0.85); }
+      .hcf2 { top: 10px; right: 0; transform: scale(0.85); }
+      .hero-trust { gap: 1rem; justify-content: center; }
+      .trust-item { font-size: 0.75rem; }
+      .hero-badge { font-size: 0.7rem; padding: 0.3rem 0.8rem; }
 
       /* Stats Fixes */
-      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
-      .stat-num { font-size: 2.2rem; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 0.75rem; }
+      .stat-num { font-size: 2rem; }
+      .stat-label { font-size: 0.78rem; }
 
       /* Portfolio Fixes */
-      .port-card { width: 85vw; max-width: 340px; height: 400px; }
+      .port-card { width: 80vw; max-width: 300px; height: 380px; }
+      .port-scroll-hint { padding: 1rem 0 2.5rem; font-size: 0.75rem; }
 
       /* Process Steps Fixes */
-      .process-steps { grid-template-columns: 1fr; gap: 2.5rem; text-align: left; }
-      .process-step { display: flex; align-items: flex-start; text-align: left; gap: 1.5rem; padding: 0; }
-      .process-icon { margin: 0; flex-shrink: 0; width: 60px; height: 60px; }
-      .process-icon svg { width: 24px; height: 24px; }
+      .process-steps { grid-template-columns: 1fr; gap: 1.5rem; }
+      .process-step { display: flex; align-items: flex-start; text-align: left; gap: 1rem; padding: 0; }
+      .process-icon { margin: 0; flex-shrink: 0; width: 52px; height: 52px; }
+      .process-icon svg { width: 22px; height: 22px; }
+      .process-step-title { font-size: 0.9rem; }
+      .process-step-desc { font-size: 0.78rem; }
+
+      /* Services Fixes */
+      .service-card { padding: 2rem 1.5rem; }
+      .service-title { font-size: 1.2rem; }
+      .service-desc { font-size: 0.88rem; }
+
+      /* Pricing Fixes */
+      .price-card { padding: 2rem 1.5rem; }
+      .price-amount { font-size: 2rem; }
+      .price-name { font-size: 1.2rem; }
+
+      /* Testimonials Fixes */
+      .testi-card { padding: 1.5rem; }
+      .testi-quote { font-size: 0.88rem; }
+
+      /* FAQ Fixes */
+      .faq-q { font-size: 0.92rem; padding: 1.2rem 0; }
+      .faq-a { font-size: 0.85rem; }
+
+      /* Contact Fixes */
+      .contact-layout { gap: 3rem; }
+      .contact-info { position: static; }
+      .form-input, .form-select, .form-textarea { padding: 0.75rem 0.85rem; font-size: 0.85rem; }
+
+      /* CTA Fixes */
+      #cta { padding: 5rem 5%; }
+      .cta-h2 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
+      .cta-sub { font-size: 0.9rem; }
+
+      /* Footer Fixes */
+      footer { padding: 3rem 5% 1.5rem; }
+      .footer-bottom { flex-direction: column; text-align: center; gap: 0.5rem; }
+
+      /* WA FAB */
+      .wa-fab { width: 50px; height: 50px; bottom: 1.25rem; right: 1.25rem; }
+      .wa-fab svg { width: 24px; height: 24px; }
+      .wa-tooltip { display: none; }
+
+      /* About Fixes */
+      .about-img-wrap img { height: 300px; }
+      .about-layout { gap: 3rem; }
+
+      /* Problem section */
+      .problem-card { padding: 1.5rem; }
+      .p-num { font-size: 2.2rem; }
+      .p-title { font-size: 1.05rem; }
+      .p-desc { font-size: 0.85rem; }
     }
   </style>
 </head>
