@@ -612,19 +612,19 @@
   <section id="stats" aria-label="Statistik Vandiza Tech">
     <div class="stats-grid">
       <div class="stat-item fade-up">
-        <div class="stat-num" data-target="20">0+</div>
+        <div class="stat-num" data-target="20">20+</div>
         <div class="stat-label">Proyek Selesai</div>
       </div>
       <div class="stat-item fade-up fade-up-d1">
-        <div class="stat-num" data-target="15">0+</div>
+        <div class="stat-num" data-target="15">15+</div>
         <div class="stat-label">Klien Puas</div>
       </div>
       <div class="stat-item fade-up fade-up-d2">
-        <div class="stat-num" data-target="3">0</div>
+        <div class="stat-num" data-target="3" data-suffix="">3</div>
         <div class="stat-label">Pilar Layanan</div>
       </div>
       <div class="stat-item fade-up fade-up-d3">
-        <div class="stat-num" data-target="2">0+</div>
+        <div class="stat-num" data-target="2">2+</div>
         <div class="stat-label">Tahun Pengalaman</div>
       </div>
     </div>
@@ -1406,7 +1406,7 @@
       if (entry.isIntersecting) {
         const el = entry.target;
         const target = parseInt(el.dataset.target);
-        animateCounter(el, target, '+');
+        animateCounter(el, target, el.dataset.suffix ?? '+');
         statObserver.unobserve(el);
       }
     });
