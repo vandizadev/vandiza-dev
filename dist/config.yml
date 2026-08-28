@@ -3,6 +3,7 @@ backend:
   repo: vandizadev/vandiza-dev
   branch: main
   base_url: https://www.vandiza.com
+  auth_endpoint: /api/auth
   client_id: Ov23liymXT9tofqhyxc9
 
 media_folder: "public/images/uploads"
