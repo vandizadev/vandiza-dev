@@ -1,0 +1,32 @@
+---
+import { site } from '../data/site.ts';
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <p><strong>{site.name}</strong> — {site.tagline}</p>
+    <p>{site.geo}</p>
+    <p>WA: {site.contact.wa} | {site.contact.email}</p>
+    <p class="copy">© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: #0f172a;
+    color: #94a3b8;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .copy {
+    margin-top: 1rem;
+    opacity: 0.6;
+  }
+</style>

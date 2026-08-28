@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import { services } from '../data/services.ts';
+const s = services.find((x) => x.slug === 'jasa-web')!;
+---
+
+<Base title={s.title} description={s.desc}>
+  <section class="page">
+    <div class="container">
+      <div class="icon">{s.icon}</div>
+      <h1>{s.title}</h1>
+      <p class="lead">{s.desc}</p>
+      <ul class="points">
+        {s.points.map((p) => <li>{p}</li>)}
+      </ul>
+      <a href="/kontak" class="btn-primary">Mulai Sekarang</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .page { padding: 4rem 0; }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+  .icon { font-size: 3rem; }
+  h1 { font-size: 2rem; margin: 1rem 0; }
+  .lead { color: #475569; font-size: 1.1rem; margin-bottom: 1.5rem; }
+  .points { padding-left: 1.2rem; line-height: 1.8; }
+  .btn-primary { display: inline-block; margin-top: 2rem; background: #f59e0b; color: #0f172a; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; }
+</style>

@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site.ts';
+---
+
+<Base title="Kontak" description="Hubungi Vandiza Tech">
+  <section class="page">
+    <div class="container">
+      <h1>Konsultasi Gratis</h1>
+      <p class="lead">Ceritakan kebutuhan infra/jaringan atau sistem digital Anda. Tim Vandiza akan balas dalam 1x24 jam.</p>
+      <div class="contact">
+        <p>📱 WA: <a href={`https://wa.me/${site.contact.wa}`}>{site.contact.wa}</a></p>
+        <p>✉️ Email: <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></p>
+        <p>📍 {site.geo}</p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .page { padding: 4rem 0; }
+  .container { max-width: 700px; margin: 0 auto; padding: 0 1.5rem; }
+  h1 { font-size: 2rem; }
+  .lead { color: #475569; margin-bottom: 2rem; }
+  .contact p { font-size: 1.1rem; margin: 0.75rem 0; }
+  .contact a { color: #f59e0b; }
+</style>

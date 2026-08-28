@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+const products = [
+  { name: 'Velonix', desc: 'SaaS billing & manajemen pelanggan RT/RW Net otomatis.', href: '/saas' },
+  { name: 'Netsight', desc: 'Monitoring jaringan & OLT real-time untuk ISP mikro.', href: '/saas' },
+  { name: 'Gasjoki', desc: 'Marketplace joki game dengan sistem escrow/rekber aman.', href: '/ecosystem' },
+];
+---
+
+<Base title="Ecosystem" description="Produk ekosistem Vandiza Tech">
+  <section class="page">
+    <div class="container">
+      <h1>Produk Vandiza Tech</h1>
+      <p class="lead">Kami tidak hanya jasa — kami juga membangun produk SaaS sendiri yang digunakan operator di seluruh Indonesia.</p>
+      <div class="grid">
+        {products.map((p) => (
+          <div class="card">
+            <h3>{p.name}</h3>
+            <p>{p.desc}</p>
+            <a href={p.href} class="link">Detail →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .page { padding: 4rem 0; }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+  h1 { font-size: 2rem; }
+  .lead { color: #475569; margin-bottom: 2rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; }
+  .card h3 { color: #f59e0b; }
+  .link { color: #0f172a; font-weight: 600; text-decoration: none; }
+</style>

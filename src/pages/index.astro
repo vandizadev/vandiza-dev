@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site.ts';
+import { services } from '../data/services.ts';
+---
+
+<Base title={site.name} description={site.description}>
+  <section class="hero">
+    <div class="container">
+      <h1>{site.tagline}</h1>
+      <p class="lead">{site.description}</p>
+      <div class="cta">
+        <a href="/kontak" class="btn-primary">Konsultasi Gratis</a>
+        <a href="/saas" class="btn-secondary">Lihat Produk</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars">
+    <div class="container">
+      <h2>3 Pilar Layanan</h2>
+      <div class="grid">
+        {services.map((s) => (
+          <div class="card">
+            <div class="icon">{s.icon}</div>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+            <ul>
+              {s.points.map((p) => <li>{p}</li>)}
+            </ul>
+            <a href={`/${s.slug}`} class="link">Selengkapnya →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: #fff;
+    padding: 5rem 0;
+    text-align: center;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .lead {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+  }
+  .cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .btn-primary, .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .btn-primary {
+    background: #f59e0b;
+    color: #0f172a;
+  }
+  .btn-secondary {
+    border: 1px solid #cbd5e1;
+    color: #fff;
+  }
+  .pillars {
+    padding: 4rem 0;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .card {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .icon {
+    font-size: 2rem;
+  }
+  .card ul {
+    margin: 1rem 0;
+    padding-left: 1.2rem;
+    color: #475569;
+    font-size: 0.95rem;
+  }
+  .link {
+    color: #f59e0b;
+    text-decoration: none;
+    font-weight: 600;
+  }
+</style>

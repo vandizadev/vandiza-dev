@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vandiza.com/sitemap.xml

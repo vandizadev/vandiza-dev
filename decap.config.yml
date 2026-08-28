@@ -1,0 +1,68 @@
+backend:
+  name: github
+  repo: vandizadev/vandiza-dev
+  branch: main
+  base_url: https://vandiza.com
+  auth_endpoint: /api/auth
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog & Artikel"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: title, label: Judul, widget: string }
+      - { name: slug, label: Slug URL, widget: string, required: false }
+      - { name: description, label: Ringkasan, widget: text }
+      - { name: cover, label: Cover, widget: image }
+      - { name: tags, label: Tag, widget: list, required: false }
+      - { name: body, label: Isi, widget: markdown }
+
+  - name: "cases"
+    label: "Case Study"
+    folder: "src/content/cases"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: title, label: Judul, widget: string }
+      - { name: client, label: Nama Klien, widget: string }
+      - { name: result, label: Hasil, widget: text }
+      - { name: quote, label: Testimoni, widget: text }
+      - { name: body, label: Isi, widget: markdown }
+
+  - name: "services"
+    label: "Layanan (3 Pilar)"
+    folder: "src/data"
+    files:
+      - name: "services"
+        label: "Data Layanan"
+        file: "src/data/services.ts"
+        fields:
+          - name: items
+            label: Daftar Pilar
+            widget: list
+            fields:
+              - { name: slug, label: Slug, widget: string }
+              - { name: title, label: Nama, widget: string }
+              - { name: desc, label: Deskripsi, widget: text }
+              - { name: icon, label: Icon, widget: string }
+
+  - name: "testimonials"
+    label: "Testimoni"
+    folder: "src/data"
+    files:
+      - name: "testimonials"
+        label: "Data Testimoni"
+        file: "src/data/testimonials.ts"
+        fields:
+          - name: items
+            label: Daftar Testimoni
+            widget: list
+            fields:
+              - { name: name, label: Nama, widget: string }
+              - { name: role, label: Peran, widget: string }
+              - { name: quote, label: Quote, widget: text }
