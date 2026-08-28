@@ -4,6 +4,15 @@ export default function handler(req, res) {
   const clientId = process.env.DECAP_CLIENT_ID;
   const redirectUri = `https://www.vandiza.com/api/auth`;
 
+  // CORS untuk fetch dari browser
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   // Step 1: redirect user to GitHub OAuth consent
   if (!query.code) {
     const ghUrl = `${apiBase}/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=repo`;
