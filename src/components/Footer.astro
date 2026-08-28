@@ -4,29 +4,33 @@ import { site } from '../data/site.ts';
 
 <footer class="site-footer">
   <div class="container">
-    <p><strong>{site.name}</strong> — {site.tagline}</p>
-    <p>{site.geo}</p>
-    <p>WA: {site.contact.wa} | {site.contact.email}</p>
+    <div class="footer-logo-wrap">
+      <img src="/images/logo-vandiza.png" alt="Vandiza Tech" />
+      <span>{site.name}</span>
+    </div>
+    <p class="tagline">{site.tagline}</p>
+    <p class="geo">{site.geo}</p>
+    <div class="contact">
+      <a href={`https://wa.me/${site.contact.wa}`}>WhatsApp</a>
+      <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+    </div>
     <p class="copy">© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    background: #0f172a;
-    color: #94a3b8;
-    padding: 2rem 0;
-    margin-top: 4rem;
+    background: var(--ink2);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 3rem 0 2rem;
     text-align: center;
-    font-size: 0.9rem;
   }
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-  .copy {
-    margin-top: 1rem;
-    opacity: 0.6;
-  }
+  .footer-logo-wrap { display: flex; align-items: center; justify-content: center; gap: 0.6rem; margin-bottom: 1rem; }
+  .footer-logo-wrap img { height: 40px; }
+  .footer-logo-wrap span { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; }
+  .tagline { color: var(--white); font-weight: 500; }
+  .geo { color: var(--muted); font-size: 0.9rem; margin: 0.4rem 0 1rem; }
+  .contact { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1.5rem; }
+  .contact a { color: var(--primary-light); text-decoration: none; font-weight: 600; }
+  .copy { color: var(--muted); font-size: 0.85rem; opacity: 0.7; }
 </style>

@@ -9,11 +9,13 @@ const posts = await getCollection('blog');
   <section class="page">
     <div class="container">
       <h1>Blog & Insight</h1>
+      <p class="lead">Tips, panduan, dan case study seputar infrastruktur jaringan & sistem digital UMKM.</p>
       <div class="grid">
         {posts.map((p) => (
           <a href={`/blog/${p.slug}`} class="card">
             <h3>{p.data.title}</h3>
             <p>{p.data.description}</p>
+            <span class="link">Baca →</span>
           </a>
         ))}
       </div>
@@ -22,10 +24,14 @@ const posts = await getCollection('blog');
 </Base>
 
 <style>
-  .page { padding: 4rem 0; }
+  .page { padding: 6rem 0 5rem; }
   .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-  .card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; text-decoration: none; color: inherit; }
-  .card h3 { color: #f59e0b; margin-bottom: 0.5rem; }
-  .card p { color: #475569; font-size: 0.95rem; }
+  h1 { font-size: 2.4rem; margin-bottom: 1rem; }
+  .lead { color: var(--muted); margin-bottom: 2.5rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .card { background: var(--ink2); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 1.75rem; text-decoration: none; transition: border-color 0.2s; }
+  .card:hover { border-color: rgba(5,165,186,0.4); }
+  .card h3 { color: var(--primary-light); font-size: 1.2rem; margin-bottom: 0.5rem; }
+  .card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
+  .link { color: var(--white); font-weight: 600; font-size: 0.9rem; }
 </style>

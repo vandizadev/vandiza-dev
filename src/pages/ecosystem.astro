@@ -1,24 +1,25 @@
 ---
 import Base from '../layouts/Base.astro';
 const products = [
-  { name: 'Velonix', desc: 'SaaS billing & manajemen pelanggan RT/RW Net otomatis.', href: '/saas' },
-  { name: 'Netsight', desc: 'Monitoring jaringan & OLT real-time untuk ISP mikro.', href: '/saas' },
-  { name: 'Gasjoki', desc: 'Marketplace joki game dengan sistem escrow/rekber aman.', href: '/ecosystem' },
+  { name: 'Velonix', desc: 'SaaS billing & manajemen pelanggan RT/RW Net otomatis.', href: '/saas', icon: '🛰️' },
+  { name: 'Netsight', desc: 'Monitoring jaringan & OLT real-time untuk ISP mikro.', href: '/saas', icon: '📡' },
+  { name: 'Gasjoki', desc: 'Marketplace joki game dengan sistem escrow/rekber aman.', href: '/ecosystem', icon: '🎮' },
 ];
 ---
 
 <Base title="Ecosystem" description="Produk ekosistem Vandiza Tech">
   <section class="page">
     <div class="container">
-      <h1>Produk Vandiza Tech</h1>
+      <h1 class="title">Produk Vandiza Tech</h1>
       <p class="lead">Kami tidak hanya jasa — kami juga membangun produk SaaS sendiri yang digunakan operator di seluruh Indonesia.</p>
       <div class="grid">
         {products.map((p) => (
-          <div class="card">
+          <a href={p.href} class="card">
+            <div class="icon">{p.icon}</div>
             <h3>{p.name}</h3>
             <p>{p.desc}</p>
-            <a href={p.href} class="link">Detail →</a>
-          </div>
+            <span class="link">Detail →</span>
+          </a>
         ))}
       </div>
     </div>
@@ -26,12 +27,15 @@ const products = [
 </Base>
 
 <style>
-  .page { padding: 4rem 0; }
+  .page { padding: 6rem 0 5rem; }
   .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
-  h1 { font-size: 2rem; }
-  .lead { color: #475569; margin-bottom: 2rem; }
+  .title { font-size: 2.4rem; margin-bottom: 1rem; }
+  .lead { color: var(--muted); margin-bottom: 2.5rem; }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
-  .card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; }
-  .card h3 { color: #f59e0b; }
-  .link { color: #0f172a; font-weight: 600; text-decoration: none; }
+  .card { background: var(--ink2); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 1.75rem; text-decoration: none; transition: border-color 0.2s; }
+  .card:hover { border-color: rgba(5,165,186,0.4); }
+  .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .card h3 { color: var(--primary-light); font-size: 1.3rem; margin-bottom: 0.5rem; }
+  .card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
+  .link { color: var(--white); font-weight: 600; font-size: 0.9rem; }
 </style>

@@ -2,23 +2,25 @@
 import Base from '../layouts/Base.astro';
 import { site } from '../data/site.ts';
 import { services } from '../data/services.ts';
+import { testimonials } from '../data/testimonials.ts';
 ---
 
 <Base title={site.name} description={site.description}>
   <section class="hero">
     <div class="container">
+      <span class="badge">Managed Service & SaaS Provider</span>
       <h1>{site.tagline}</h1>
       <p class="lead">{site.description}</p>
       <div class="cta">
         <a href="/kontak" class="btn-primary">Konsultasi Gratis</a>
-        <a href="/saas" class="btn-secondary">Lihat Produk</a>
+        <a href="/saas" class="btn-secondary">Lihat Produk →</a>
       </div>
     </div>
   </section>
 
   <section class="pillars">
     <div class="container">
-      <h2>3 Pilar Layanan</h2>
+      <h2 class="section-title">3 Pilar Layanan</h2>
       <div class="grid">
         {services.map((s) => (
           <div class="card">
@@ -34,75 +36,67 @@ import { services } from '../data/services.ts';
       </div>
     </div>
   </section>
+
+  <section class="testi">
+    <div class="container">
+      <h2 class="section-title">Dipercaya Operator & UMKM</h2>
+      <div class="grid">
+        {testimonials.map((t) => (
+          <div class="tcard">
+            <p class="quote">"{t.quote}"</p>
+            <p class="name">{t.name}</p>
+            <p class="role">{t.role}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 </Base>
 
 <style>
   .hero {
-    background: linear-gradient(135deg, #1e293b, #0f172a);
-    color: #fff;
-    padding: 5rem 0;
+    background: radial-gradient(circle at 20% 20%, #13131c, #09090e 60%);
+    padding: 6rem 0 5rem;
     text-align: center;
   }
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  .lead {
-    font-size: 1.1rem;
-    color: #cbd5e1;
-    max-width: 700px;
-    margin: 0 auto 2rem;
-  }
-  .cta {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-  }
-  .btn-primary, .btn-secondary {
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
+  .badge {
+    display: inline-block;
+    background: rgba(5, 165, 186, 0.15);
+    color: var(--primary-light);
+    border: 1px solid rgba(5, 165, 186, 0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
     font-weight: 600;
+    margin-bottom: 1.5rem;
   }
-  .btn-primary {
-    background: #f59e0b;
-    color: #0f172a;
+  h1 { font-size: 2.8rem; line-height: 1.15; margin-bottom: 1.25rem; max-width: 800px; margin-inline: auto; }
+  .lead { color: var(--muted); font-size: 1.1rem; max-width: 680px; margin: 0 auto 2rem; }
+  .cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary, .btn-secondary {
+    padding: 0.8rem 1.75rem; border-radius: 10px; text-decoration: none; font-weight: 700;
   }
-  .btn-secondary {
-    border: 1px solid #cbd5e1;
-    color: #fff;
-  }
-  .pillars {
-    padding: 4rem 0;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
+  .btn-primary { background: var(--primary-light); color: #04121a; }
+  .btn-secondary { border: 1px solid rgba(255,255,255,0.2); color: var(--white); }
+  .pillars, .testi { padding: 5rem 0; }
+  .section-title { font-size: 2rem; text-align: center; margin-bottom: 2.5rem; }
+  .pillars .grid, .testi .grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;
   }
   .card {
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 1.5rem;
+    background: var(--ink2); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 1.75rem;
+    transition: border-color 0.2s, transform 0.2s;
   }
-  .icon {
-    font-size: 2rem;
-  }
-  .card ul {
-    margin: 1rem 0;
-    padding-left: 1.2rem;
-    color: #475569;
-    font-size: 0.95rem;
-  }
-  .link {
-    color: #f59e0b;
-    text-decoration: none;
-    font-weight: 600;
-  }
+  .card:hover { border-color: rgba(5,165,186,0.4); transform: translateY(-4px); }
+  .icon { font-size: 2.2rem; margin-bottom: 1rem; }
+  .card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+  .card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
+  .card ul { list-style: none; margin-bottom: 1.25rem; }
+  .card ul li { color: var(--white); font-size: 0.9rem; padding-left: 1.2rem; position: relative; margin-bottom: 0.5rem; }
+  .card ul li::before { content: "▸"; color: var(--primary-light); position: absolute; left: 0; }
+  .link { color: var(--primary-light); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+  .tcard { background: var(--ink2); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 1.75rem; }
+  .quote { font-size: 1rem; margin-bottom: 1rem; }
+  .name { font-weight: 700; font-family: 'Syne', sans-serif; }
+  .role { color: var(--muted); font-size: 0.85rem; }
 </style>

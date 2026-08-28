@@ -4,40 +4,55 @@ import { site } from '../data/site.ts';
 
 <header class="site-header">
   <div class="container">
-    <a href="/" class="logo">{site.name}</a>
+    <a href="/" class="nav-logo">
+      <img src="/images/logo-vandiza.png" alt="Vandiza Tech" />
+      <span class="nav-logo-text">{site.name}</span>
+    </a>
     <nav>
       {site.nav.map((n) => <a href={n.href}>{n.label}</a>)}
     </nav>
+    <a href="/kontak" class="cta-small">Konsultasi</a>
   </div>
 </header>
 
 <style>
   .site-header {
-    background: #0f172a;
-    color: #fff;
-    padding: 1rem 0;
+    background: rgba(9, 9, 14, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 0.9rem 0;
   }
   .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
   }
-  .logo {
-    font-weight: 800;
-    font-size: 1.25rem;
-    color: #fff;
-    text-decoration: none;
-  }
+  .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+  .nav-logo img { height: 34px; }
+  .nav-logo-text { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--white); }
+  nav { display: flex; gap: 1.4rem; }
   nav a {
-    color: #cbd5e1;
+    color: var(--muted);
     text-decoration: none;
-    margin-left: 1.25rem;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: color 0.2s;
   }
-  nav a:hover {
-    color: #fff;
+  nav a:hover { color: var(--white); }
+  .cta-small {
+    background: var(--primary-light);
+    color: #04121a;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  @media (max-width: 768px) {
+    nav { display: none; }
   }
 </style>

@@ -13,6 +13,9 @@ import Footer from '../components/Footer.astro';
     <title>{title} | {site.name}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   </head>
   <body>
     <Header />
@@ -22,3 +25,26 @@ import Footer from '../components/Footer.astro';
     <Footer />
   </body>
 </html>
+
+<style is:global>
+  :root {
+    --ink: #09090e;
+    --ink2: #13131c;
+    --ink3: #1c1c28;
+    --primary: #0277b6;
+    --primary-light: #05a5ba;
+    --white: #f5f4ef;
+    --muted: #9ca3af;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background: var(--ink);
+    color: var(--white);
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4 { font-family: 'Syne', sans-serif; letter-spacing: -0.02em; }
+  a { color: inherit; }
+  .container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+</style>
