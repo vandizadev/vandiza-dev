@@ -8,9 +8,4 @@ export default defineConfig({
   build: {
     format: 'directory',
   },
-  vite: {
-    ssr: {
-      noExternal: ['decap-cms-app'],
-    },
-  },
 });
