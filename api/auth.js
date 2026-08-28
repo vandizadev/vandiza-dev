@@ -1,8 +1,8 @@
 export default function handler(req, res) {
-  const { query, url } = req;
+  const { query } = req;
   const apiBase = 'https://github.com/login/oauth';
   const clientId = process.env.DECAP_CLIENT_ID;
-  const redirectUri = `https://vandiza.com/api/auth`;
+  const redirectUri = `https://www.vandiza.com/api/auth`;
 
   // Step 1: redirect user to GitHub OAuth consent
   if (!query.code) {
@@ -28,7 +28,6 @@ export default function handler(req, res) {
     .then((r) => r.json())
     .then((data) => {
       const token = data.access_token;
-      // Decap expects the token at /api/auth#access_token=...
       return res
         .writeHead(302, { Location: `/admin/#access_token=${token}` })
         .end();
