@@ -26,7 +26,12 @@ import { site } from '../data/site.ts';
     text-align: center;
   }
   .footer-logo-wrap { display: flex; align-items: center; justify-content: center; gap: 0.6rem; margin-bottom: 1rem; }
-  .footer-logo-wrap img { height: 40px; }
+  .footer-logo-wrap img {
+    height: 40px;
+    filter: drop-shadow(0 2px 8px rgba(5, 165, 186, 0.3));
+    transition: transform 0.3s ease;
+  }
+  .footer-logo-wrap:hover img { transform: scale(1.05); }
   .footer-logo-wrap span { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.2rem; }
   .tagline { color: var(--white); font-weight: 500; }
   .geo { color: var(--muted); font-size: 0.9rem; margin: 0.4rem 0 1rem; }
