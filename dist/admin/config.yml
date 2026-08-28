@@ -2,7 +2,7 @@ backend:
   name: github
   repo: vandizadev/vandiza-dev
   branch: main
-  base_url: https://vandiza.com
+  base_url: https://www.vandiza.com
   auth_endpoint: /api/auth
 
 media_folder: "public/images/uploads"
