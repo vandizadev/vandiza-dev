@@ -1,0 +1,43 @@
+---
+interface Props {
+  name: 'connect' | 'build' | 'secure' | 'satellite' | 'signal' | 'game' | 'whatsapp' | 'mail' | 'check';
+  size?: number;
+  class?: string;
+}
+const { name, size = 28, class: className = '' } = Astro.props;
+
+const paths: Record<string, string> = {
+  // Connect — network nodes
+  connect: '<circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5 6.5 16.5M12 7.5 17.5 16.5M7.5 19h9"/>',
+  // Build — code brackets
+  build: '<path d="M9 8 5 12l4 4M15 8l4 4-4 4M13 5l-2 14"/>',
+  // Secure — shield
+  secure: '<path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="m9 12 2 2 4-4"/>',
+  // Satellite
+  satellite: '<path d="M5 11l3-3 4 4-3 3zM13 5l3-3 3 3-3 3zM9 15l-4 4M19 5l-4 4M14 14l4 4"/>',
+  // Signal — wifi/bars
+  signal: '<path d="M4 18h2v2H4zM10 13h2v7h-2zM16 8h2v12h-2zM22 3h2v17h-2z"/>',
+  // Game controller
+  game: '<rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 12v2M7 13h2M16 12.5h.01M18.5 14h.01"/>',
+  // WhatsApp
+  whatsapp: '<path d="M12 3a9 9 0 0 0-7.5 14L3 21l4.2-1.4A9 9 0 1 0 12 3z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5.8 0 1.5-.1 2-.3"/><path d="M14.5 9.5 12 12l-1.5-1.2"/>',
+  // Mail
+  mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+  // Check
+  check: '<path d="m5 12 4.5 4.5L19 7"/>',
+};
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.8"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class={className}
+  aria-hidden="true"
+  set:html={paths[name]}
+/>

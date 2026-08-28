@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import { site } from '../data/site.ts';
 import { services } from '../data/services.ts';
 import { testimonials } from '../data/testimonials.ts';
+import Icon from '../components/Icon.astro';
 ---
 
 <Base title={site.name} description={site.description}>
@@ -24,11 +25,13 @@ import { testimonials } from '../data/testimonials.ts';
       <div class="grid">
         {services.map((s) => (
           <div class="card">
-            <div class="icon">{s.icon}</div>
+            <div class="icon"><Icon name={s.icon} size={32} /></div>
             <h3>{s.title}</h3>
             <p>{s.desc}</p>
             <ul>
-              {s.points.map((p) => <li>{p}</li>)}
+              {s.points.map((p) => (
+                <li><Icon name="check" size={16} class="check" /> {p}</li>
+              ))}
             </ul>
             <a href={`/${s.slug}`} class="link">Selengkapnya →</a>
           </div>
@@ -88,12 +91,12 @@ import { testimonials } from '../data/testimonials.ts';
     transition: border-color 0.2s, transform 0.2s;
   }
   .card:hover { border-color: rgba(5,165,186,0.4); transform: translateY(-4px); }
-  .icon { font-size: 2.2rem; margin-bottom: 1rem; }
+  .icon { font-size: 2.2rem; margin-bottom: 1rem; color: var(--primary-light); display: flex; align-items: center; }
   .card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
   .card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
   .card ul { list-style: none; margin-bottom: 1.25rem; }
-  .card ul li { color: var(--white); font-size: 0.9rem; padding-left: 1.2rem; position: relative; margin-bottom: 0.5rem; }
-  .card ul li::before { content: "▸"; color: var(--primary-light); position: absolute; left: 0; }
+  .card ul li { display: flex; align-items: center; gap: 0.5rem; color: var(--white); font-size: 0.9rem; margin-bottom: 0.5rem; }
+  .card ul li :global(.check) { color: var(--primary-light); flex-shrink: 0; }
   .link { color: var(--primary-light); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
   .tcard { background: var(--ink2); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 1.75rem; }
   .quote { font-size: 1rem; margin-bottom: 1rem; }

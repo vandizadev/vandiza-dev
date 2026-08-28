@@ -11,7 +11,7 @@ export const services: Service[] = [
     slug: 'saas',
     title: 'Connect — SaaS Infrastruktur',
     desc: 'Platform otomatisasi billing, monitoring, dan isolir untuk operator RT/RW Net & ISP mikro. Kelola ratusan pelanggan dari satu dashboard.',
-    icon: '🛰️',
+    icon: 'connect',
     points: [
       'Velonix — Billing & manajemen pelanggan otomatis',
       'Netsight — Monitoring jaringan & OLT real-time',
@@ -23,7 +23,7 @@ export const services: Service[] = [
     slug: 'jasa-web',
     title: 'Build — Web & App Custom',
     desc: 'Jasa pembuatan website & aplikasi untuk UMKM dan bisnis jasa. Dari landing page hingga sistem internal dengan integrasi pembayaran.',
-    icon: '🛠️',
+    icon: 'build',
     points: [
       'Website company profile & landing page',
       'Sistem booking & order online (F&B, jasa)',
@@ -35,7 +35,7 @@ export const services: Service[] = [
     slug: 'keamanan',
     title: 'Secure — Audit & Hardening',
     desc: 'Layanan audit keamanan siber untuk infrastruktur jaringan & aplikasi. Ditangani oleh tenaga bersertifikat CRTA.',
-    icon: '🛡️',
+    icon: 'secure',
     points: [
       'Penetration test web & jaringan',
       'Hardening server & firewall MikroTik',

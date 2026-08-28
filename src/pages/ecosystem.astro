@@ -1,9 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
 const products = [
-  { name: 'Velonix', desc: 'SaaS billing & manajemen pelanggan RT/RW Net otomatis.', href: '/saas', icon: '🛰️' },
-  { name: 'Netsight', desc: 'Monitoring jaringan & OLT real-time untuk ISP mikro.', href: '/saas', icon: '📡' },
-  { name: 'Gasjoki', desc: 'Marketplace joki game dengan sistem escrow/rekber aman.', href: '/ecosystem', icon: '🎮' },
+  { name: 'Velonix', desc: 'SaaS billing & manajemen pelanggan RT/RW Net otomatis.', href: '/saas', icon: 'satellite' },
+  { name: 'Netsight', desc: 'Monitoring jaringan & OLT real-time untuk ISP mikro.', href: '/saas', icon: 'signal' },
+  { name: 'Gasjoki', desc: 'Marketplace joki game dengan sistem escrow/rekber aman.', href: '/ecosystem', icon: 'game' },
 ];
 ---
 
@@ -15,7 +16,7 @@ const products = [
       <div class="grid">
         {products.map((p) => (
           <a href={p.href} class="card">
-            <div class="icon">{p.icon}</div>
+            <div class="icon"><Icon name={p.icon} size={30} /></div>
             <h3>{p.name}</h3>
             <p>{p.desc}</p>
             <span class="link">Detail →</span>
@@ -34,7 +35,7 @@ const products = [
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
   .card { background: var(--ink2); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 1.75rem; text-decoration: none; transition: border-color 0.2s; }
   .card:hover { border-color: rgba(5,165,186,0.4); }
-  .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .icon { color: var(--primary-light); margin-bottom: 1rem; display: flex; align-items: center; }
   .card h3 { color: var(--primary-light); font-size: 1.3rem; margin-bottom: 0.5rem; }
   .card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
   .link { color: var(--white); font-weight: 600; font-size: 0.9rem; }
