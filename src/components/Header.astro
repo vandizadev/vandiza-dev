@@ -8,12 +8,41 @@ import { site } from '../data/site.ts';
       <img src="/images/logo-vandiza.png" alt="Vandiza Tech" />
       <span class="nav-logo-text">{site.name}</span>
     </a>
-    <nav>
+    <nav class="nav-desktop">
       {site.nav.map((n) => <a href={n.href}>{n.label}</a>)}
+      <a href="/kontak" class="cta-small">Konsultasi</a>
     </nav>
-    <a href="/kontak" class="cta-small">Konsultasi</a>
+    <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-mobile">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<div class="nav-mobile" id="nav-mobile" hidden>
+  {site.nav.map((n) => <a href={n.href}>{n.label}</a>)}
+  <a href="/kontak" class="cta-small">Konsultasi</a>
+</div>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const drawer = document.querySelector('.nav-mobile');
+  if (toggle && drawer) {
+    toggle.addEventListener('click', () => {
+      const open = drawer.hasAttribute('hidden');
+      drawer.hidden = !open;
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    // Close menu when a link is clicked
+    drawer.querySelectorAll('a').forEach((a) =>
+      a.addEventListener('click', () => {
+        drawer.hidden = true;
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      })
+    );
+  }
+</script>
 
 <style>
   .site-header {
@@ -46,7 +75,8 @@ import { site } from '../data/site.ts';
   }
   .nav-logo-text { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--white); transition: color 0.25s ease; }
   .nav-logo:hover .nav-logo-text { color: var(--primary-light); }
-  nav { display: flex; gap: 1.4rem; }
+
+  nav { display: flex; gap: 1.4rem; align-items: center; }
   nav a {
     color: var(--muted);
     text-decoration: none;
@@ -55,6 +85,7 @@ import { site } from '../data/site.ts';
     transition: color 0.2s;
   }
   nav a:hover { color: var(--white); }
+
   .cta-small {
     background: var(--primary-light);
     color: #04121a;
@@ -63,8 +94,61 @@ import { site } from '../data/site.ts';
     text-decoration: none;
     font-weight: 700;
     font-size: 0.85rem;
+    white-space: nowrap;
   }
+
+  /* Hamburger button — hidden on desktop */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+  }
+  .nav-toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Mobile drawer */
+  .nav-mobile {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(9, 9, 14, 0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    z-index: 49;
+  }
+  .nav-mobile a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .nav-mobile .cta-small {
+    display: block;
+    text-align: center;
+    margin-top: 0.5rem;
+    border-bottom: none;
+  }
+
   @media (max-width: 768px) {
-    nav { display: none; }
+    .nav-desktop { display: none; }
+    .nav-toggle { display: flex; }
   }
 </style>
