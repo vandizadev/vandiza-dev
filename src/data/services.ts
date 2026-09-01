@@ -22,12 +22,12 @@ export const services: Service[] = [
   {
     slug: 'jasa-web',
     title: 'Build — Web & App Custom',
-    desc: 'Jasa pembuatan website & aplikasi untuk UMKM dan bisnis jasa. Dari landing page hingga sistem internal dengan integrasi pembayaran.',
+    desc: 'Jasa pembuatan website & digitalisasi UMKM. Dari landing page, toko online, sistem booking, hingga dashboard internal — dibuat custom, cepat, dan terintegrasi pembayaran.',
     icon: 'build',
     points: [
-      'Website company profile & landing page',
+      'Landing page & company profile profesional',
+      'Toko online dengan pembayaran QRIS / transfer',
       'Sistem booking & order online (F&B, jasa)',
-      'Integrasi pembayaran (Tripay, Midtrans, QRIS)',
       'Dashboard internal & automasi bisnis',
     ],
   },

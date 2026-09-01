@@ -5,30 +5,220 @@ import Icon from '../components/Icon.astro';
 const s = services.find((x) => x.slug === 'jasa-web')!;
 ---
 
-<Base title={s.title} description={s.desc}>
-  <section class="page">
+<Base title="Jasa Pembuatan Website & Digitalisasi UMKM — Vandiza Tech" description="Bikin website & sistem digital untuk UMKM Anda: landing page, toko online, sistem booking, hingga dashboard internal. Dibuat custom, cepat, dan terintegrasi pembayaran.">
+  <section class="hero">
     <div class="container">
-      <div class="icon"><Icon name={s.icon} size={36} /></div>
-      <h1>{s.title}</h1>
-      <p class="lead">{s.desc}</p>
-      <ul class="points">
-        {s.points.map((p) => (
-          <li><Icon name="check" size={18} class="check" /> {p}</li>
-        ))}
-      </ul>
-      <a href="/kontak" class="btn-primary">Mulai Sekarang</a>
+      <span class="badge">Build — Web & App Custom</span>
+      <h1>Website & Sistem Digital untuk Mengembangkan Bisnis Anda</h1>
+      <p class="lead">{s.desc} Mulai dari landing page profesional sampai sistem booking & toko online yang bisa langsung dipakai pelanggan.</p>
+      <div class="cta">
+        <a href="/kontak" class="btn-primary">Konsultasi Gratis</a>
+        <a href="#paket" class="btn-secondary">Lihat Paket</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="problems" id="masalah">
+    <div class="container">
+      <h2>Bisnis Anda Bisa Lewat Ini Tanpa Website</h2>
+      <div class="grid">
+        <div class="item">
+          <h3>Kesulitan dicari calon pelanggan</h3>
+          <p>Kompetitor yang punya website lebih mudah ditemukan di Google & diapresiasi lebih profesional.</p>
+        </div>
+        <div class="item">
+          <h3>Orderan lewat chat, rawan kacau</h3>
+          <p>Pesanan & pertanyaan campur di WA, data pelanggan hilang, follow-up manual.</p>
+        </div>
+        <div class="item">
+          <h3>Pembayaran manual & telat</h3>
+          <p>Invoice, penagihan, dan konfirmasi transfer dilakukan satu per satu. Capek & rawan salah.</p>
+        </div>
+        <div class="item">
+          <h3>Tidak ada data bisnis yang jelas</h3>
+          <p>Penjualan, stok, pelanggan — tercatat asal-asalan, susah diambil keputusan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="paket" id="paket">
+    <div class="container">
+      <h2 class="section-title">Paket yang Sesuai Kebutuhan</h2>
+      <div class="paket-grid">
+        <div class="pcard featured">
+          <span class="tag">Paling Diminati</span>
+          <h3>Landing Page</h3>
+          <p class="desc">Website satu halaman yang nampilin bisnis Anda secara profesional & meyakinkan.</p>
+          <ul>
+            <li><Icon name="check" size={16} class="check" /> Desain custom sesuai brand</li>
+            <li><Icon name="check" size={16} class="check" /> Mobile-friendly & cepat</li>
+            <li><Icon name="check" size={16} class="check" /> Dasar SEO biar ditemukan</li>
+            <li><Icon name="check" size={16} class="check" /> Integrasi WhatsApp</li>
+          </ul>
+          <a href="/kontak" class="btn-primary">Tanya Harga</a>
+        </div>
+        <div class="pcard">
+          <h3>Toko Online</h3>
+          <p class="desc">Jualan online dengan katalog produk, keranjang, dan pembayaran digital.</p>
+          <ul>
+            <li><Icon name="check" size={16} class="check" /> Katalog & detail produk</li>
+            <li><Icon name="check" size={16} class="check" /> Keranjang & checkout</li>
+            <li><Icon name="check" size={16} class="check" /> Pembayaran QRIS / transfer</li>
+            <li><Icon name="check" size={16} class="check" /> Panel kelola produk & order</li>
+          </ul>
+          <a href="/kontak" class="btn-primary">Tanya Harga</a>
+        </div>
+        <div class="pcard">
+          <h3>Sistem Booking / Order</h3>
+          <p class="desc">Pelanggan pesan jadwal atau pesan langsung tanpa bolak-balik chat.</p>
+          <ul>
+            <li><Icon name="check" size={16} class="check" /> Kalender & booking online</li>
+            <li><Icon name="check" size={16} class="check" /> Notifikasi ke bisnis Anda</li>
+            <li><Icon name="check" size={16} class="check" /> Integrasi pembayaran DP</li>
+            <li><Icon name="check" size={16} class="check" /> Dashboard pesanan</li>
+          </ul>
+          <a href="/kontak" class="btn-primary">Tanya Harga</a>
+        </div>
+        <div class="pcard">
+          <h3>Dashboard Internal</h3>
+          <p class="desc">Sistem khusus untuk kelola data, stok, pelanggan, atau laporan internal bisnis.</p>
+          <ul>
+            <li><Icon name="check" size={16} class="check" /> Kelola data & laporan</li>
+            <li><Icon name="check" size={16} class="check" /> Multi-user & hak akses</li>
+            <li><Icon name="check" size={16} class="check" /> Integrasi dengan sistem ada</li>
+            <li><Icon name="check" size={16} class="check" /> Skalabel untuk tumbuh</li>
+          </ul>
+          <a href="/kontak" class="btn-primary">Konsultasi</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefit">
+    <div class="container">
+      <h2 class="section-title">Kenapa Pilih Vandiza Tech</h2>
+      <div class="benefit-grid">
+        <div class="bitem">
+          <div class="icon"><Icon name="build" size={28} /></div>
+          <h3>Dibuat Custom, Bukan Template</h3>
+          <p>Website didesain sesuai kebutuhan & identitas bisnis Anda, bukan sekadar ganti nama template.</p>
+        </div>
+        <div class="bitem">
+          <div class="icon"><Icon name="connect" size={28} /></div>
+          <h3>Terintegrasi & Bisa Tumbuh</h3>
+          <p>Pembayaran, WhatsApp, dan sistem lain nyambung langsung. Mudah dikembangkan seiring bisnis naik.</p>
+        </div>
+        <div class="bitem">
+          <div class="icon"><Icon name="secure" size={28} /></div>
+          <h3>Aman, Didukung Founder Langsung</h3>
+          <p>Keamanan standar, dirawat langsung oleh founder berpengalaman di jaringan & siber (CRTA) — bukan sekadar desain cantik.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="container">
+      <h2 class="section-title">Alur Kerja Kami</h2>
+      <div class="process-grid">
+        <div class="step"><span class="num">01</span><h3>Konsultasi</h3><p>Diskusi kebutuhan & tujuan website Anda. Kami susun rekomendasi yang pas.</p></div>
+        <div class="step"><span class="num">02</span><h3>Desain</h3><p>Prototype tampilan disetujui dulu sebelum dikoding. Anda pegang kendali.</p></div>
+        <div class="step"><span class="num">03</span><h3>Buat & Uji</h3><p>Website dikembangkan & diuji agar cepat, aman, dan enak dipakai.</p></div>
+        <div class="step"><span class="num">04</span><h3>Launch & Pendampingan</h3><p>Website online. Anda didampingi isi konten & perawatan pasca-rilis.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="container">
+      <h2 class="section-title">Pertanyaan Umum</h2>
+      <div class="faq-item">
+        <h3>Berapa lama proses pembuatannya?</h3>
+        <p>Landing page bisa selesai 1–2 minggu, sistem booking/toko sekitar 2–4 minggu tergantung kompleksitas.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Apakah dibuat custom atau pakai template?</h3>
+        <p>Desain custom sesuai kebutuhan & brand Anda, bukan template instan.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Apakah bisa integrasi pembayaran?</h3>
+        <p>Bisa. Kami integrasikan QRIS, transfer, dan payment gateway sesuai kebutuhan bisnis Anda.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Apakah termasuk perawatan setelah jadi?</h3>
+        <p>Layanan rilis sudah termasuk pendampingan. Untuk perawatan jangka panjang tersedia paket terpisah.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Siap Mengembangkan Bisnis Anda ke Digital?</h2>
+      <p>Ceritakan kebutuhan Anda — konsultasi awal gratis, tanpa komitmen.</p>
+      <a href="/kontak" class="btn-primary">Konsultasi Gratis Sekarang</a>
     </div>
   </section>
 </Base>
 
 <style>
-  .page { padding: 6rem 0 5rem; }
-  .container { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
-  .icon { color: var(--primary-light); margin-bottom: 1rem; display: flex; align-items: center; }
-  h1 { font-size: 2.4rem; margin-bottom: 1rem; }
-  .lead { color: var(--muted); font-size: 1.15rem; margin-bottom: 2rem; }
-  .points { list-style: none; }
-  .points li { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.85rem; font-size: 1.05rem; }
-  .points li :global(.check) { color: var(--primary-light); flex-shrink: 0; }
-  .btn-primary { display: inline-block; margin-top: 2rem; background: var(--primary-light); color: #04121a; padding: 0.8rem 1.75rem; border-radius: 10px; text-decoration: none; font-weight: 700; }
+  :global(.container) { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Hero */
+  .hero { background: radial-gradient(circle at 20% 20%, #13131c, #09090e 60%); padding: 6rem 0 5rem; text-align: center; }
+  .badge { display: inline-block; background: rgba(5,165,186,0.15); color: var(--primary-light); border: 1px solid rgba(5,165,186,0.3); padding: 0.4rem 1rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1.5rem; }
+  h1 { font-size: 2.8rem; line-height: 1.15; margin-bottom: 1.25rem; max-width: 760px; margin-inline: auto; }
+  .hero .lead { color: var(--muted); font-size: 1.15rem; max-width: 640px; margin: 0 auto 2rem; }
+  .cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary, .btn-secondary { padding: 0.8rem 1.75rem; border-radius: 10px; text-decoration: none; font-weight: 700; }
+  .btn-primary { background: var(--primary-light); color: #04121a; }
+  .btn-secondary { border: 1px solid rgba(255,255,255,0.2); color: var(--white); }
+
+  /* Sections spacing */
+  .problems, .benefit, .process, .faq { padding: 5rem 0; }
+  .paket { padding: 5rem 0; background: rgba(5,165,186,0.04); }
+  .section-title { font-size: 2rem; text-align: center; margin-bottom: 2.5rem; }
+  h2 { font-size: 2rem; text-align: center; margin-bottom: 2.5rem; }
+
+  /* Problems */
+  .problems .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+  .problems .item { background: var(--ink2); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 1.5rem; }
+  .problems .item h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--white); }
+  .problems .item p { color: var(--muted); font-size: 0.95rem; }
+
+  /* Paket */
+  .paket-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+  .pcard { background: var(--ink2); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 1.75rem; position: relative; display: flex; flex-direction: column; }
+  .pcard.featured { border-color: rgba(5,165,186,0.6); }
+  .tag { position: absolute; top: -0.6rem; left: 1.5rem; background: var(--primary-light); color: #04121a; font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 999px; }
+  .pcard h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+  .pcard .desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+  .pcard ul { list-style: none; flex: 1; margin-bottom: 1.25rem; }
+  .pcard ul li { display: flex; align-items: center; gap: 0.5rem; color: var(--white); font-size: 0.9rem; margin-bottom: 0.5rem; }
+  .pcard ul li :global(.check) { color: var(--primary-light); flex-shrink: 0; }
+  .pcard .btn-primary { display: block; text-align: center; }
+
+  /* Benefit */
+  .benefit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .bitem { background: var(--ink2); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 1.75rem; text-align: center; }
+  .bitem .icon { color: var(--primary-light); display: flex; justify-content: center; margin-bottom: 0.75rem; }
+  .bitem h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .bitem p { color: var(--muted); font-size: 0.95rem; }
+
+  /* Process */
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .step { text-align: center; }
+  .num { font-size: 2.2rem; font-weight: 800; font-family: 'Syne', sans-serif; color: var(--primary-light); display: block; margin-bottom: 0.75rem; }
+  .step h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .step p { color: var(--muted); font-size: 0.9rem; }
+
+  /* FAQ */
+  .faq-item { background: var(--ink2); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+  .faq-item h3 { font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--white); }
+  .faq-item p { color: var(--muted); font-size: 0.95rem; }
+
+  /* CTA */
+  .cta-section { padding: 5rem 0; text-align: center; background: radial-gradient(circle at 80% 30%, #13131c, #09090e 65%); }
+  .cta-section h2 { color: var(--white); }
+  .cta-section p { color: var(--muted); font-size: 1.1rem; margin-bottom: 2rem; }
 </style>
