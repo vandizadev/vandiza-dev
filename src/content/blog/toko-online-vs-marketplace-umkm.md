@@ -1,6 +1,8 @@
 ---
 title: Toko Online Sendiri vs Jualan di Marketplace — Mana yang Tepat untuk UMKM?
+date: 2026-09-02
 description: Perbandingan jualan di marketplace (Shopee, Tokopedia, TikTok Shop) vs website toko online sendiri. Kelebihan, kekurangan, biaya, dan strategi terbaik UMKM.
+author: Tubagus Paradisa (Founder Vandiza Tech)
 cover: /images/og-image.jpg
 tags:
   - toko-online

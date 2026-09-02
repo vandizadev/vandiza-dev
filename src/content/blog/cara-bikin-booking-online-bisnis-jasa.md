@@ -1,6 +1,8 @@
 ---
 title: Cara Bikin Booking Online untuk Bisnis Jasa (F&B, Salon, Klinik, Guru, Bengkel)
+date: 2026-09-02
 description: Panduan menerapkan sistem booking online untuk bisnis jasa — cara kerja, manfaat, fitur yang dibutuhkan, dan bagaimana memulai tanpa ribet.
+author: Tubagus Paradisa (Founder Vandiza Tech)
 cover: /images/og-image.jpg
 tags:
   - booking

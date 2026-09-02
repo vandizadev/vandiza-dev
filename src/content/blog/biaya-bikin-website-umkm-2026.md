@@ -1,6 +1,8 @@
 ---
 title: Berapa Biaya Bikin Website UMKM di 2026? Panduan Lengkap + Kisaran Harga
+date: 2026-09-02
 description: Ketahui kisaran biaya pembuatan website UMKM di Indonesia tahun 2026 — landing page, toko online, hingga sistem booking. Lengkap dengan faktor yang memengaruhi harga.
+author: Tubagus Paradisa (Founder Vandiza Tech)
 cover: /images/og-image.jpg
 tags:
   - umkm

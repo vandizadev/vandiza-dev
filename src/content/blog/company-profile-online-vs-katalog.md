@@ -1,6 +1,8 @@
 ---
 title: Company Profile Online vs Katalog — Mana yang Tepat untuk Bisnis UMKM?
+date: 2026-09-02
 description: Pahami beda company profile website dan toko online untuk bisnis UMKM. Temukan mana yang paling tepat sesuai kebutuhan & budget bisnis Anda.
+author: Tubagus Paradisa (Founder Vandiza Tech)
 cover: /images/og-image.jpg
 tags:
   - umkm

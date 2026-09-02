@@ -1,6 +1,8 @@
 ---
 title: Checklist Sebelum Bikin Website — 10 Hal yang Wajib Disiapkan
+date: 2026-09-02
 description: "Panduan lengkap apa saja yang perlu disiapkan sebelum membuat website bisnis: tujuan, konten, gambar, domain, pembayaran, dan anggaran. Praktis untuk UMKM."
+author: Tubagus Paradisa (Founder Vandiza Tech)
 cover: /images/og-image.jpg
 tags:
   - website

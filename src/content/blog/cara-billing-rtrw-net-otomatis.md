@@ -1,6 +1,8 @@
 ---
 title: Cara Otomatisasi Billing RT/RW Net dengan Velonix
+date: 2026-09-02
 description: Panduan praktis mengelola ratusan pelanggan RT/RW Net tanpa ribet — dari pelanggan daftar, tagihan otomatis, pembayaran QRIS, sampai isolir pelanggan nunggak.
+author: Tubagus Paradisa (Founder Vandiza Tech)
 cover: /images/og-image.jpg
 tags:
   - rt-rw-net

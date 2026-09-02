@@ -1,6 +1,8 @@
 ---
 title: Cara Bikin Dashboard Laporan Bisnis Otomatis (Tanpa Rekap Manual)
+date: 2026-09-02
 description: Pelajari cara mengotomatisasi laporan penjualan, stok, dan pelanggan lewat dashboard — hemat berjam-jam kerja manual dan ambil keputusan lebih cepat.
+author: Tubagus Paradisa (Founder Vandiza Tech)
 cover: /images/og-image.jpg
 tags:
   - digitalisasi
