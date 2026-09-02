@@ -6,7 +6,7 @@ export const site = {
   geo: 'Bekasi-based · Melayani Jabodetabek & seluruh Indonesia (remote)',
   contact: {
     wa: '6287758611756',
-    email: 'admin@vandiza.com',
+    email: 'support@vandiza.com',
   },
   nav: [
     { label: 'SaaS', href: '/saas' },
